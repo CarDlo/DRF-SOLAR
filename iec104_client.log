@@ -1,0 +1,583 @@
+2025-01-03 23:12:54,650 - Internal Server Error: /api/plants
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\deprecation.py", line 131, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/plants/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-01-03 23:14:10,445 - Internal Server Error: /api/plants
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\deprecation.py", line 131, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/plants/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-01-03 23:14:49,582 - Bad Request: /api/plants/
+2025-01-03 23:16:12,881 - Bad Request: /api/plants/
+2025-01-03 23:19:07,480 - Bad Request: /api/plants/
+2025-01-03 23:20:13,609 - Not Found: /client/start/bayunca
+2025-01-03 23:21:33,763 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\urls.py changed, reloading.
+2025-01-03 23:22:30,448 - Internal Server Error: /api/client/start/bayunca/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py", line 38, in start_client_api
+    result = start_client(plant_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py", line 104, in start_client
+    plant = next((p for p in plants if p["name"] == plant_name), None)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py", line 104, in <genexpr>
+    plant = next((p for p in plants if p["name"] == plant_name), None)
+                                       ~^^^^^^^^
+TypeError: 'Plant' object is not subscriptable
+2025-01-03 23:24:45,784 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-03 23:27:39,280 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-03 23:33:11,132 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-03 23:51:57,524 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-03 23:55:19,512 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-03 23:56:13,796 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-03 23:58:36,647 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-03 23:59:10,619 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 00:00:25,182 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 00:03:16,029 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 00:04:06,103 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 00:04:32,081 - Connection to (127.0.0.1, 502) failed: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-04 00:04:32,081 - No se pudo conectar al dispositivo Modbus en 127.0.0.1:502
+2025-01-04 00:05:14,299 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 00:05:26,650 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 00:07:09,897 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 00:07:40,611 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 00:08:12,858 - Connection to (127.0.0.1, 502) failed: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-04 00:08:12,858 - No se pudo conectar al dispositivo Modbus en 127.0.0.1:502
+2025-01-04 00:09:42,337 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 00:09:50,872 - Connection to (127.0.0.1, 502) failed: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-04 00:09:50,872 - No se pudo conectar al dispositivo Modbus en 127.0.0.1:502
+2025-01-04 00:10:53,281 - Connection to (127.0.0.1, 502) failed: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-04 00:10:53,281 - No se pudo conectar al dispositivo Modbus en 127.0.0.1:502
+2025-01-04 00:18:09,129 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-04 00:21:07,322 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-04 06:43:01,971 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-04 06:46:28,312 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-04 06:49:04,357 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\models.py changed, reloading.
+2025-01-04 06:54:43,106 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\admin.py changed, reloading.
+2025-01-04 06:55:24,582 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\admin.py changed, reloading.
+2025-01-04 06:55:44,514 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\models.py changed, reloading.
+2025-01-04 06:56:45,239 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\models.py changed, reloading.
+2025-01-04 07:01:40,188 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-04 07:11:33,891 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.
+2025-01-04 07:12:37,871 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-04 07:20:03,405 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:08,406 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:13,406 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:18,407 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:23,408 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:28,409 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:33,410 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:38,411 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:43,412 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:48,412 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:53,413 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:20:58,413 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:03,414 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:08,415 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:13,416 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:18,417 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:23,417 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:28,418 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:33,419 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:38,420 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:43,421 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:48,421 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:53,422 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:21:58,422 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:03,423 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:08,424 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:13,425 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:18,425 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:23,426 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:28,426 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:33,427 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:38,428 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:43,429 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:48,430 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:53,430 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:22:58,431 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:03,432 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:08,433 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:13,433 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:18,434 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:23,435 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:28,435 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:33,436 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:38,437 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:43,437 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:48,439 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:53,440 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:23:58,440 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:03,441 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:08,442 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:13,442 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:18,443 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:23,443 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:28,444 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:33,444 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:38,445 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:43,446 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:48,447 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:53,447 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:24:58,448 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:03,449 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:08,450 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:13,451 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:18,452 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:23,452 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:28,453 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:33,454 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:38,455 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:43,455 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:48,456 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:53,457 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:25:58,458 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:03,459 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:08,459 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:13,460 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:18,461 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:20,490 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-04 07:26:23,461 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:28,462 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:33,462 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:38,463 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:43,464 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:48,465 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:53,466 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:26:58,466 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:03,467 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:08,468 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:13,469 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:18,470 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:23,471 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:28,472 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:33,473 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:38,474 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:43,474 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:48,475 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:53,476 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:27:58,477 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:03,478 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:08,479 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:13,480 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:18,481 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:23,482 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:28,483 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:33,483 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:38,484 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:43,485 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:48,486 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:53,487 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:28:58,488 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:03,488 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:08,489 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:13,490 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:18,490 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:23,491 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:28,493 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:33,494 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:38,494 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:43,495 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:48,496 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:53,497 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:29:58,498 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:03,499 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:08,500 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:13,501 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:18,502 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:23,502 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:28,503 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:33,504 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:38,505 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:43,506 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:48,508 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:53,509 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:30:58,509 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:03,510 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:08,511 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:13,512 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:18,513 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:23,514 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:28,515 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:33,515 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:38,516 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:43,517 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:48,517 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:53,518 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:31:58,518 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:03,519 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:08,519 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:13,520 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:18,521 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:23,521 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:28,522 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:33,523 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:38,524 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:43,525 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:48,525 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:53,526 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:32:58,528 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:03,528 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:08,529 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:13,529 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:18,530 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:23,530 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:28,531 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:33,532 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:38,532 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:43,533 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:48,534 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:53,535 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:33:58,536 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:03,536 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:08,537 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:13,537 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:18,538 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:23,539 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:28,539 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:33,540 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:38,541 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:43,542 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:48,542 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:53,543 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:34:58,544 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:03,544 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:08,545 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:13,546 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:18,547 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:23,547 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:28,548 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:33,549 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:38,549 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:43,550 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:48,550 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:53,551 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:35:58,551 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:03,552 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:08,553 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:13,554 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:18,554 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:23,555 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:28,556 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:33,556 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:38,557 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:43,558 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:48,558 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:53,559 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:36:58,560 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:03,560 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:08,561 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:13,561 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:18,562 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:23,563 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:28,563 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:33,564 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:38,564 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:43,565 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:48,566 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:53,567 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:37:58,568 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:03,569 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:08,569 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:13,570 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:18,571 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:23,572 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:28,572 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:33,573 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:38,573 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:43,574 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:48,574 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:53,575 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:38:58,576 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:03,577 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:08,578 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:13,579 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:18,580 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:23,580 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:28,581 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:33,581 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:38,582 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:43,583 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:48,583 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:53,584 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:39:58,585 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:03,586 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:08,587 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:13,588 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:18,589 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:23,590 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:28,591 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:33,592 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:38,593 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:43,594 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:48,594 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:53,595 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:40:58,596 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:03,596 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:08,597 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:13,598 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:18,598 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:23,599 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:28,600 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:33,601 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:38,601 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:43,602 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:48,603 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:53,603 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:41:58,604 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:03,605 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:08,605 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:13,606 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:18,607 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:23,608 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:28,609 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:33,610 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:38,610 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:43,611 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:48,612 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:53,613 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:42:58,614 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:03,616 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:08,617 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:13,617 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:18,618 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:23,619 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:28,620 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:33,620 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:38,621 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:43,622 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:48,622 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:53,623 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:43:58,624 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:44:03,626 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:44:08,626 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:44:13,627 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:44:18,628 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:44:23,628 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:44:28,630 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:44:33,630 - Error inesperado: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-01-04 07:50:41,212 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-04 07:51:33,335 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-04 07:57:18,554 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\admin.py changed, reloading.
+2025-01-04 07:58:34,175 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 07:59:55,171 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 08:00:23,826 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-04 08:31:14,032 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-04 08:31:48,942 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-04 08:32:11,020 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-04 08:33:17,866 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-04 08:36:40,183 - Exception response 131 / 0
+2025-01-04 08:36:40,183 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=4, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:36:45,186 - Exception response 131 / 0
+2025-01-04 08:36:45,186 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=8, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:36:50,190 - Exception response 131 / 0
+2025-01-04 08:36:50,190 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=12, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:36:55,192 - Exception response 131 / 0
+2025-01-04 08:36:55,192 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=16, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:00,195 - Exception response 131 / 0
+2025-01-04 08:37:00,195 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=20, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:05,195 - Exception response 131 / 0
+2025-01-04 08:37:05,195 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=24, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:10,198 - Exception response 131 / 0
+2025-01-04 08:37:10,198 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=28, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:15,201 - Exception response 131 / 0
+2025-01-04 08:37:15,201 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=32, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:20,204 - Exception response 131 / 0
+2025-01-04 08:37:20,204 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=36, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:25,205 - Exception response 131 / 0
+2025-01-04 08:37:25,205 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=40, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:30,207 - Exception response 131 / 0
+2025-01-04 08:37:30,207 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=44, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:35,211 - Exception response 131 / 0
+2025-01-04 08:37:35,211 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=48, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:40,212 - Exception response 131 / 0
+2025-01-04 08:37:40,212 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=52, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:45,215 - Exception response 131 / 0
+2025-01-04 08:37:45,215 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=56, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:50,218 - Exception response 131 / 0
+2025-01-04 08:37:50,218 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=60, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:37:55,222 - Exception response 131 / 0
+2025-01-04 08:37:55,222 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=64, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:00,223 - Exception response 131 / 0
+2025-01-04 08:38:00,223 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=68, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:05,226 - Exception response 131 / 0
+2025-01-04 08:38:05,227 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=72, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:10,228 - Exception response 131 / 0
+2025-01-04 08:38:10,228 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=76, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:15,230 - Exception response 131 / 0
+2025-01-04 08:38:15,232 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=80, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:20,233 - Exception response 131 / 0
+2025-01-04 08:38:20,233 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=84, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:25,237 - Exception response 131 / 0
+2025-01-04 08:38:25,237 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=88, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:30,238 - Exception response 131 / 0
+2025-01-04 08:38:30,238 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=92, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:35,242 - Exception response 131 / 0
+2025-01-04 08:38:35,242 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=96, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:40,244 - Exception response 131 / 0
+2025-01-04 08:38:40,244 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=100, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:45,245 - Exception response 131 / 0
+2025-01-04 08:38:45,245 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=104, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:50,247 - Exception response 131 / 0
+2025-01-04 08:38:50,247 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=108, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:38:55,250 - Exception response 131 / 0
+2025-01-04 08:38:55,250 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=112, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:39:00,252 - Exception response 131 / 0
+2025-01-04 08:39:00,252 - Error al leer registros: ExceptionResponse(dev_id=1, transaction_id=116, address=0, count=0, bits=[], registers=[], status=1)
+2025-01-04 08:39:05,254 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:39:10,255 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:39:15,256 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:39:20,256 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:39:25,257 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:39:30,258 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:39:35,259 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:39:40,260 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:39:45,260 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:39:50,261 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:39:55,262 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:00,263 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:05,263 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:10,264 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:15,266 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:20,266 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:25,267 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:30,268 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:35,268 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:40,269 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:45,270 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:50,270 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:40:55,271 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:41:00,272 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:41:05,273 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:41:10,274 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:41:15,274 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:41:19,654 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-04 08:41:20,276 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:41:25,276 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:41:30,277 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:41:35,277 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:41:40,278 - Error inesperado: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-01-04 08:41:52,184 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:41:57,185 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:02,186 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:07,187 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:12,187 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:23,816 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:28,817 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:33,818 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:38,819 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:43,820 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:48,820 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:53,821 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:42:58,822 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:43:03,823 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:43:08,823 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:43:13,823 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:43:18,824 - Error inesperado: 1 < count 500 < 125 !
+2025-01-04 08:43:23,825 - Error inesperado: 1 < count 500 < 125 !
+2025-01-05 06:41:14,071 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\admin.py changed, reloading.
+2025-01-05 06:45:31,189 - Internal Server Error: /api/plants/1
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\deprecation.py", line 131, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to localhost:8000/api/plants/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2025-01-05 06:46:21,030 - Bad Request: /api/plants/1/
+2025-01-05 06:47:08,173 - Bad Request: /api/plants/1/
+2025-01-05 06:47:58,089 - Bad Request: /api/plants/1/
+2025-01-05 06:50:34,142 - Bad Request: /api/plants/1/
+2025-01-05 06:52:09,807 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-05 06:54:15,734 - Connection to (127.0.0.1, 502) failed: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-05 06:54:15,734 - No se pudo conectar al dispositivo Modbus en 127.0.0.1:502
+2025-01-05 06:57:52,613 - Internal Server Error: /api/client/start-all/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py", line 74, in start_all_clients_api
+    result = start_all_clients()
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py", line 177, in start_all_clients
+    plant_name = plant["name"]
+                 ~~~~~^^^^^^^^
+TypeError: 'Plant' object is not subscriptable
+2025-01-05 07:00:36,029 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-05 07:00:46,594 - Connection to (127.0.0.1, 502) failed: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-05 07:00:46,594 - No se pudo conectar al dispositivo Modbus en 127.0.0.1:502
+2025-01-05 07:03:37,255 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-05 07:04:04,627 - Connection to (127.0.0.1, 502) failed: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-05 07:04:04,627 - No se pudo conectar al dispositivo Modbus en 127.0.0.1:502
