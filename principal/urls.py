@@ -18,10 +18,16 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 from rest_framework.documentation import include_docs_urls
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework.permissions import AllowAny
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('plants.urls')),
-    path('docs/', include_docs_urls(title='Documentacion API')),
+    path('docs/', include_docs_urls(title='Documentacion API', permission_classes=[AllowAny])),
     path('api/', include('registros.urls')),
+
+    #JWT
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),    
 ]

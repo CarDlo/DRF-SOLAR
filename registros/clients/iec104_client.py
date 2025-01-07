@@ -1,14 +1,14 @@
 import time
 import c104
 import logging
-from registros.models import Bayunca, LaVilla
+from registros.models import Bayunca, LaVilla, Oldt, Solchacras, Solsantonio, Solhuaqui, Sanpedro, Gonzaenergy, Produlesti, General
 
 # Configuración del archivo de registro
 LOG_FILE = "iec104_client.log"
 logging.basicConfig(filename=LOG_FILE, level=logging.ERROR, format='%(asctime)s - %(message)s')
 
 
-def start_iec104_client(plant_name, ip, port, modelo, tick_rate_ms, command_timeout_ms, time_sender_sleep_s, originator_address, time_connect_s):
+def start_iec104_client(plant_id, plant_name, ip, port, modelo, tick_rate_ms, command_timeout_ms, time_sender_sleep_s, originator_address, time_connect_s):
 
     print("Iniciando cliente IEC104...")
     """
@@ -23,11 +23,27 @@ def start_iec104_client(plant_name, ip, port, modelo, tick_rate_ms, command_time
     def send_data_to_api(io_address, value, type):
 
         try:
-            match plant_name:
+            match modelo:
                 case "Bayunca1":
-                    Bayunca.objects.create(REG_CA=type, value=value, direccion=io_address)
+                    Bayunca.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
                 case "Lavilla":
-                    LaVilla.objects.create(REG_CA=type, value=value, direccion=io_address)
+                    LaVilla.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
+                case "Oldt":
+                    Oldt.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
+                case "Solchacras":
+                    Solchacras.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
+                case "Solsantonio":
+                    Solsantonio.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
+                case "Solhuaqui":
+                    Solhuaqui.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
+                case "Sanpedro":
+                    Sanpedro.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
+                case "Gonzaenergy":
+                    Gonzaenergy.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
+                case "Produlesti":
+                    Produlesti.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
+                case "General":
+                    General.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
         except Exception as e:
             logging.error(f"Error al guardar los datos en la base de datos: {e}")
 

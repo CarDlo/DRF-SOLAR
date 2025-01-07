@@ -9,8 +9,7 @@ LOG_FILE = "modbus_client.log"
 logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-def start_modbus_client(plant_id, plant_name, ip, port, start_address, max_registers, interval, total_registers, modelo):
-  
+def start_modbus_client(plant_id, plant_name,ip, port, start_address, max_registers, interval, modelo):
     print(f"Configuración MODBUS, desde el cliente:plant_name={plant_name}, ip={ip}, port={port}, start_address={start_address}, max_registers={max_registers}, interval={interval}")
     """
     Inicia el cliente Modbus TCP y envía datos a una API en intervalos definidos.
@@ -20,7 +19,6 @@ def start_modbus_client(plant_id, plant_name, ip, port, start_address, max_regis
     :param start_address: Dirección inicial de los registros a leer.
     :param max_registers: Cantidad máxima de registros a leer.
     :param interval: Intervalo en segundos entre lecturas consecutivas.
-    :param total_registers: Número total de registros a leer.
     :param modelo: Modelo que se usa para almacenar los registros.
     """
 
@@ -28,6 +26,7 @@ def start_modbus_client(plant_id, plant_name, ip, port, start_address, max_regis
         """
         Envía datos leídos del dispositivo Modbus a una API.
 
+        :param io_address: Dirección de E/S (si aplica, aquí es "NA").
         :param value: Valor del registro.
         :param reg_address: Dirección del registro Modbus.
         """
@@ -56,6 +55,8 @@ def start_modbus_client(plant_id, plant_name, ip, port, start_address, max_regis
         except Exception as e:
             logging.error(f"Error al guardar los datos en la base de datos: {e}")
 
+
+
     def read_modbus_registers(client, start_address, max_registers):
         """
         Lee un rango de registros Modbus desde un dispositivo Modbus TCP.
@@ -75,6 +76,7 @@ def start_modbus_client(plant_id, plant_name, ip, port, start_address, max_regis
                 for i, value in enumerate(result.registers):
                     reg_address = start_address + i
                     logging.info(f"Dirección: {reg_address}, Valor: {value}")
+                    
                     send_data_to_api(value, reg_address)
             else:
                 logging.error("La respuesta del servidor no contiene registros.")
@@ -83,7 +85,7 @@ def start_modbus_client(plant_id, plant_name, ip, port, start_address, max_regis
         except Exception as e:
             logging.error(f"Error inesperado: {e}")
 
-    def main_loop(plant_name, host, port, start_address, max_registers, interval, total_registers):
+    def main_loop(plant_name, host, port, start_address, max_registers, interval):
         """
         Mantiene la conexión al dispositivo Modbus y realiza lecturas periódicas.
 
@@ -92,7 +94,6 @@ def start_modbus_client(plant_id, plant_name, ip, port, start_address, max_regis
         :param start_address: Dirección inicial de lectura.
         :param max_registers: Cantidad máxima de registros a leer.
         :param interval: Intervalo en segundos entre lecturas consecutivas.
-        :param total_registers: Número total de registros a leer.
         """
         client = ModbusTcpClient(host=host, port=port)
         try:
@@ -109,13 +110,7 @@ def start_modbus_client(plant_id, plant_name, ip, port, start_address, max_regis
                     if not client.connect():
                         logging.error("Reintento de conexión fallido. Saliendo del bucle.")
                         break
-
-                current_address = start_address
-                while current_address < start_address + total_registers:
-                    count = min(max_registers, (start_address + total_registers) - current_address)
-                    read_modbus_registers(client, current_address, count)
-                    current_address += count
-
+                read_modbus_registers(client, start_address, max_registers)
                 logging.info(f"Esperando {interval} segundos para la próxima lectura...")
                 time.sleep(interval)
 
@@ -128,5 +123,15 @@ def start_modbus_client(plant_id, plant_name, ip, port, start_address, max_regis
             client.close()
 
     # Iniciar el bucle principal
-    main_loop(plant_name, ip, port, start_address, max_registers, interval, total_registers)
-    print(plant_name, ip, port, start_address, max_registers, interval, total_registers)
+    main_loop(plant_name,ip, port, start_address, max_registers, interval)
+    print(plant_name,ip, port, start_address, max_registers, interval)
+    # if __name__ == "__main__":
+    #     # Configuración personalizable
+    #     HOST = "127.0.0.1"  # Dirección IP del dispositivo Modbus
+    #     PORT = 502          # Puerto TCP del dispositivo Modbus
+    #     START_ADDRESS = 0   # Dirección inicial de lectura
+    #     MAX_REGISTERS = 10  # Cantidad máxima de registros a leer
+    #     INTERVAL = 2       # Intervalo en segundos entre lecturas
+
+    #     # Llamar a la función principal
+    #     main_loop(HOST, PORT, START_ADDRESS, MAX_REGISTERS, INTERVAL)

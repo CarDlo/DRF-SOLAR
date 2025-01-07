@@ -1,7 +1,7 @@
 # registros/urls.py
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import BayuncaViewSet, LaVillaViewSet
+from .views import BayuncaViewSet, LaVillaViewSet, OldtViewSet, SolchacrasViewSet, SolsantonioViewSet, SolhuaquiViewSet, SanpedroViewSet, GonzaenergyViewSet, ProdulestiViewSet, GeneralViewSet
 from django.urls import path
 from .views import (
     start_client_api,
@@ -15,6 +15,14 @@ from .views import (
 router = DefaultRouter()
 router.register(r'bayunca', BayuncaViewSet, basename='bayunca')
 router.register(r'lavilla', LaVillaViewSet, basename='lavilla')
+router.register(r'oldt', OldtViewSet, basename='oldt')
+router.register(r'solchacras', SolchacrasViewSet, basename='solchacras')
+router.register(r'solsantonio', SolsantonioViewSet, basename='solsantonio')
+router.register(r'solhuaqui', SolhuaquiViewSet, basename='solhuaqui')
+router.register(r'sanpedro', SanpedroViewSet, basename='sanpedro')
+router.register(r'gonzaenergy', GonzaenergyViewSet, basename='gonzaenergy')
+router.register(r'produlesti', ProdulestiViewSet, basename='produlesti')
+router.register(r'general', GeneralViewSet, basename='general')
 
 urlpatterns = [
     path('', include(router.urls)),

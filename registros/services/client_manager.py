@@ -50,6 +50,7 @@ def handle_plant(plant):
     port = int(plant.puerto)
     modelo = plant.modelo
     plant_name = plant.name
+    plant_id = plant
 
     metadata = plant.metadata if plant else {}
     if not isinstance(metadata, dict):
@@ -64,15 +65,14 @@ def handle_plant(plant):
         originator_address = metadata.get("originator_address", 123)
         time_connect_s = metadata.get("time_connect_ms", 1000) / 1000
 
-        start_iec104_client(plant_name,ip, port, modelo, tick_rate_ms, command_timeout_ms, time_sender_sleep_s, originator_address, time_connect_s)
+        start_iec104_client(plant_id, plant_name,ip, port, modelo, tick_rate_ms, command_timeout_ms, time_sender_sleep_s, originator_address, time_connect_s)
 
     elif protocolo == "MODBUS":
         start_address = metadata.get("start_address", 0)
         max_registers = metadata.get("max_registers", 10)
         interval = metadata.get("interval", 5)
-
-        
-        start_modbus_client(plant_name, ip, port, start_address, max_registers, interval, modelo)
+        block_registers = min(metadata.get("block_registers", 125), 125)
+        start_modbus_client(plant_id, plant_name, ip, port, start_address, block_registers, interval, max_registers, modelo)
 
     else:
         print(f"Protocolo desconocido para la planta: {plant.name} con protocolo {protocolo}")

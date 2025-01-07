@@ -1,0 +1,230 @@
+[
+    {
+      "model": "plants.Plant",
+      "pk": 1,
+      "fields": {
+        "name": "OLDT",
+        "province": "Tolú Viejo",
+        "country": "Colombia",
+        "potencia_dc": 12.94,
+        "scada": "Webdom",
+        "protocolo_comunicacion": "MODBUS",
+        "ip": "",
+        "puerto": 502,
+        "modelo": "Oldt",
+        "credenciales": null,
+        "metadata": {
+          "start_address": 0,
+          "max_registers": 10,
+          "interval": 5,
+          "block_registers": 125
+          
+        },
+        "active": false,
+        "created_at": "2024-01-06T00:00:00Z",
+        "updated_at": "2024-01-06T00:00:00Z"
+      }
+    },
+    {
+      "model": "plants.Plant",
+      "pk": 2,
+      "fields": {
+        "name": "SolChacras",
+        "province": "Oro",
+        "country": "Ecuador",
+        "potencia_dc": 1.11,
+        "scada": "Webdom",
+        "protocolo_comunicacion": "MODBUS",
+        "ip": "",
+        "puerto": 502,
+        "modelo": "Solchacras",
+        "credenciales": null,
+        "metadata": {
+          "start_address": 0,
+          "max_registers": 10,
+          "interval": 5,
+          "block_registers": 125
+        },
+        "active": false,
+        "created_at": "2024-01-06T00:00:00Z",
+        "updated_at": "2024-01-06T00:00:00Z"
+      }
+    },
+    {
+      "model": "plants.Plant",
+      "pk": 3,
+      "fields": {
+        "name": "SolSantonio",
+        "province": "Oro",
+        "country": "Ecuador",
+        "potencia_dc": 1.11,
+        "scada": "Webdom",
+        "protocolo_comunicacion": "MODBUS",
+        "ip": "",
+        "puerto": 502,
+        "modelo": "Solsantonio",
+        "credenciales": null,
+        "metadata": {
+          "start_address": 0,
+          "max_registers": 10,
+          "interval": 5,
+          "block_registers": 125
+        },
+        "active": false,
+        "created_at": "2024-01-06T00:00:00Z",
+        "updated_at": "2024-01-06T00:00:00Z"
+      }
+    },
+    {
+      "model": "plants.Plant",
+      "pk": 4,
+      "fields": {
+        "name": "SolHuaqui",
+        "province": "Oro",
+        "country": "Ecuador",
+        "potencia_dc": 1.11,
+        "scada": "Webdom",
+        "protocolo_comunicacion": "MODBUS",
+        "ip": "",
+        "puerto": 502,
+        "modelo": "Solhuaqui",
+        "credenciales": null,
+        "metadata": {
+          "start_address": 0,
+          "max_registers": 10,
+          "interval": 5,
+          "block_registers": 125
+        },
+        "active": false,
+        "created_at": "2024-01-06T00:00:00Z",
+        "updated_at": "2024-01-06T00:00:00Z"
+      }
+    },
+    {
+      "model": "plants.Plant",
+      "pk": 5,
+      "fields": {
+        "name": "SanPedro",
+        "province": "Loja",
+        "country": "Ecuador",
+        "potencia_dc": 1.17,
+        "scada": "Webdom",
+        "protocolo_comunicacion": "MODBUS",
+        "ip": "",
+        "puerto": 502,
+        "modelo": "Sanpedro",
+        "credenciales": null,
+        "metadata": {
+          "start_address": 0,
+          "max_registers": 10,
+          "interval": 5,
+          "block_registers": 125
+        },
+        "active": false,
+        "created_at": "2024-01-06T00:00:00Z",
+        "updated_at": "2024-01-06T00:00:00Z"
+      }
+    },
+    {
+      "model": "plants.Plant",
+      "pk": 6,
+      "fields": {
+        "name": "Gonzaenergy",
+        "province": "Loja",
+        "country": "Ecuador",
+        "potencia_dc": 1.17,
+        "scada": "Webdom",
+        "protocolo_comunicacion": "MODBUS",
+        "ip": "",
+        "puerto": 502,
+        "modelo": "Gonzaenergy",
+        "credenciales": null,
+        "metadata": {
+          "start_address": 0,
+          "max_registers": 10,
+          "interval": 5,
+          "block_registers": 125
+        },
+        "active": false,
+        "created_at": "2024-01-06T00:00:00Z",
+        "updated_at": "2024-01-06T00:00:00Z"
+      }
+    },
+    {
+      "model": "plants.Plant",
+      "pk": 7,
+      "fields": {
+        "name": "Produlesti",
+        "province": "Produlesti",
+        "country": "Rumania",
+        "potencia_dc": 2.49,
+        "scada": "Higeco",
+        "protocolo_comunicacion": "MODBUS",
+        "ip": "",
+        "puerto": 502,
+        "modelo": "Produlesti",
+        "credenciales": null,
+        "metadata": {
+          "start_address": 0,
+          "max_registers": 10,
+          "interval": 5,
+          "block_registers": 125
+        },
+        "active": false,
+        "created_at": "2024-01-06T00:00:00Z",
+        "updated_at": "2024-01-06T00:00:00Z"
+      }
+    },
+    {
+      "model": "plants.Plant",
+      "pk": 8,
+      "fields": {
+        "name": "Bayunca1",
+        "province": "Bayunca",
+        "country": "Colombia",
+        "potencia_dc": 3.58,
+        "scada": "Webdom",
+        "protocolo_comunicacion": "MODBUS",
+        "ip": "127.0.0.1",
+        "puerto": 502,
+        "modelo": "Bayunca1",
+        "credenciales": null,
+        "metadata": {
+          "start_address": 0,
+          "max_registers": 10,
+          "interval": 5,
+          "block_registers": 125
+        },
+        "active": true,
+        "created_at": "2024-01-06T00:00:00Z",
+        "updated_at": "2024-01-06T00:00:00Z"
+      }
+    },
+    {
+      "model": "plants.Plant",
+      "pk": 9,
+      "fields": {
+        "name": "Lavilla",
+        "province": "Lo Santos",
+        "country": "Panamá",
+        "potencia_dc": 13.52,
+        "scada": "BLC",
+        "protocolo_comunicacion": "IEC104",
+        "ip": "127.0.0.1",
+        "puerto": 2404,
+        "modelo": "LaVilla",
+        "credenciales": null,
+        "metadata": {
+          "tick_rate_ms": 1000,
+          "time_connect_ms": 1000,
+          "command_timeout_ms": 5000,
+          "originator_address": 123,
+          "time_sender_sleep_ms": 1000
+        },
+        "active": true,
+        "created_at": "2024-01-06T00:00:00Z",
+        "updated_at": "2024-01-06T00:00:00Z"
+      }
+    }
+  ]
+  

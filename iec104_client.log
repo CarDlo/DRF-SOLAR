@@ -581,3 +581,912 @@ TypeError: 'Plant' object is not subscriptable
 2025-01-05 07:03:37,255 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
 2025-01-05 07:04:04,627 - Connection to (127.0.0.1, 502) failed: [WinError 10061] No connection could be made because the target machine actively refused it
 2025-01-05 07:04:04,627 - No se pudo conectar al dispositivo Modbus en 127.0.0.1:502
+2025-01-05 07:56:03,037 - Unauthorized: /api/plants/1/
+2025-01-05 07:57:20,318 - Method Not Allowed: /api/token/
+2025-01-05 07:58:02,953 - Unauthorized: /docs/
+2025-01-05 07:58:20,622 - Unauthorized: /docs/
+2025-01-05 07:58:23,989 - Unauthorized: /docs/
+2025-01-05 07:58:38,287 - Not Found: /docs/
+2025-01-05 07:58:40,456 - Unauthorized: /docs/
+2025-01-05 07:58:53,238 - Unauthorized: /
+2025-01-05 07:59:17,630 - Unauthorized: /
+2025-01-05 07:59:19,095 - Unauthorized: /
+2025-01-05 07:59:19,867 - Unauthorized: /
+2025-01-05 07:59:20,481 - Unauthorized: /
+2025-01-05 07:59:20,930 - Unauthorized: /
+2025-01-05 07:59:21,437 - Unauthorized: /
+2025-01-05 07:59:21,739 - Unauthorized: /
+2025-01-05 08:25:57,744 - Unauthorized: /api/plants/
+2025-01-05 08:26:46,690 - Unauthorized: /
+2025-01-05 08:26:50,298 - Unauthorized: /
+2025-01-05 08:26:52,262 - Unauthorized: /
+2025-01-05 08:26:59,320 - Unauthorized: /
+2025-01-05 08:27:05,648 - Unauthorized: /docs/
+2025-01-05 08:27:06,327 - Unauthorized: /docs/
+2025-01-05 08:27:09,391 - Unauthorized: /docs/
+2025-01-05 08:29:20,158 - Unauthorized: /api/client/stop/Bayunca1/
+2025-01-05 08:33:38,466 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\sites.py changed, reloading.
+2025-01-05 08:35:08,538 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\urls.py changed, reloading.
+2025-01-05 08:38:40,658 - Unauthorized: /docs/
+2025-01-05 08:39:01,815 - Unauthorized: /docs/
+2025-01-05 08:39:24,531 - Unauthorized: /docs/
+2025-01-05 08:39:27,912 - Unauthorized: /docs/
+2025-01-05 08:44:40,305 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\urls.py changed, reloading.
+2025-01-05 12:16:46,994 - Unauthorized: /api/plants/
+2025-01-05 12:19:49,617 - Unauthorized: /api/plants/
+2025-01-05 12:20:38,600 - Unauthorized: /api/plants/
+2025-01-05 12:21:04,346 - Unauthorized: /api/plants/
+2025-01-05 13:16:13,716 - Not Found: /api/sings/
+2025-01-05 13:21:03,135 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\admin.py changed, reloading.
+2025-01-05 15:02:52,094 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\admin.py changed, reloading.
+2025-01-05 15:03:55,097 - Internal Server Error: /admin/plants/signs/add/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 839, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\forms\models.py", line 312, in __new__
+    fields = fields_for_model(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\forms\models.py", line 207, in fields_for_model
+    raise FieldError(
+django.core.exceptions.FieldError: 'created_at' cannot be specified for Signs model form as it is a non-editable field
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 1961, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 1820, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 1855, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 841, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: 'created_at' cannot be specified for Signs model form as it is a non-editable field. Check fields/fieldsets/exclude attributes of class SignsAdmin.
+2025-01-05 15:04:36,693 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\api.py changed, reloading.
+2025-01-05 15:04:41,202 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-05 15:04:55,649 - Internal Server Error: /admin/plants/signs/add/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 839, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\forms\models.py", line 312, in __new__
+    fields = fields_for_model(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\forms\models.py", line 207, in fields_for_model
+    raise FieldError(
+django.core.exceptions.FieldError: 'created_at' cannot be specified for Signs model form as it is a non-editable field
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 1961, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 1820, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 1855, in _changeform_view
+    ModelForm = self.get_form(
+                ^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\contrib\admin\options.py", line 841, in get_form
+    raise FieldError(
+django.core.exceptions.FieldError: 'created_at' cannot be specified for Signs model form as it is a non-editable field. Check fields/fieldsets/exclude attributes of class SignsAdmin.
+2025-01-05 15:06:16,055 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\admin.py changed, reloading.
+2025-01-05 15:13:34,485 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-05 15:14:38,837 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-05 15:16:32,261 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-05 15:41:10,491 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\models.py changed, reloading.
+2025-01-05 15:47:52,008 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:52,008 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:52,008 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:52,008 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:52,008 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:52,008 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:52,008 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:52,008 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:52,008 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:52,008 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:57,011 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:57,011 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:57,011 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:57,011 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:57,011 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:57,011 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:57,011 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:57,011 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:57,011 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:47:57,011 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:02,015 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:02,015 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:02,015 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:02,015 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:02,015 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:02,015 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:02,015 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:02,015 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:02,015 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:02,015 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:07,016 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:07,017 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:07,017 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:07,017 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:07,017 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:07,017 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:07,017 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:07,017 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:07,017 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:07,017 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:12,018 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:12,018 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:12,019 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:12,019 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:12,019 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:12,019 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:12,019 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:12,019 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:12,019 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:12,019 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:17,020 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:17,020 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:17,020 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:17,020 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:17,020 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:17,020 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:17,020 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:17,020 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:17,020 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:17,020 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:22,024 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:22,024 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:22,024 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:22,024 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:22,024 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:22,024 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:22,024 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:22,024 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:22,024 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:22,024 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:27,027 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:27,027 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:27,027 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:27,027 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:27,027 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:27,027 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:27,027 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:27,027 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:27,027 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:27,027 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:32,030 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:32,030 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:32,031 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:32,031 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:32,031 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:32,031 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:32,031 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:32,031 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:32,031 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:32,031 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:37,032 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:37,032 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:37,032 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:37,032 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:37,032 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:37,032 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:37,032 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:37,032 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:37,032 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:37,032 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:42,035 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:42,035 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:42,035 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:42,035 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:42,036 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:42,036 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:42,036 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:42,036 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:42,037 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:42,037 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:47,037 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:47,037 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:47,037 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:47,037 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:47,037 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:47,037 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:47,037 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:47,037 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:47,039 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:47,039 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:52,040 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:52,040 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:52,040 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:52,040 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:52,041 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:52,041 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:52,041 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:52,041 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:52,041 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:52,041 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:57,042 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:57,044 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:57,044 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:57,044 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:57,044 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:57,044 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:57,044 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:57,044 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:57,044 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:48:57,044 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:02,046 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:02,046 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:02,046 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:02,046 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:02,046 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:02,046 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:02,046 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:02,046 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:02,046 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:02,046 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:07,048 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:07,049 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:07,049 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:07,049 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:07,049 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:07,049 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:07,049 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:07,049 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:07,049 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:07,049 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:12,052 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:12,052 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:12,052 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:12,052 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:12,052 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:12,052 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:12,052 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:12,052 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:12,052 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:12,052 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:17,054 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:17,054 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:17,054 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:17,054 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:17,054 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:17,054 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:17,054 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:17,054 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:17,054 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:17,054 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:22,055 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:22,055 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:22,055 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:22,055 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:22,055 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:22,055 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:22,055 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:22,055 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:22,055 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:22,055 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:27,058 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:27,058 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:27,058 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:27,058 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:27,058 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:27,058 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:27,058 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:27,058 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:27,058 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:27,058 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:32,060 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:32,060 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:32,060 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:32,060 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:32,060 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:32,060 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:32,060 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:32,060 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:32,060 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:32,060 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:37,063 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:37,063 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:37,063 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:37,063 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:37,063 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:37,063 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:37,063 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:37,063 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:37,063 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:37,063 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:42,065 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:42,066 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:42,066 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:42,066 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:42,066 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:42,066 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:42,066 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:42,066 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:42,066 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:42,066 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:47,068 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:47,068 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:47,070 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:47,070 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:47,070 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:47,070 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:47,070 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:47,070 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:47,070 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:47,070 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:52,071 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:52,071 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:52,071 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:52,071 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:52,071 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:52,071 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:52,071 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:52,071 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:52,071 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:52,071 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:57,073 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:57,073 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:57,073 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:57,073 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:57,073 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:57,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:57,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:57,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:57,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:49:57,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:02,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:02,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:02,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:02,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:02,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:02,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:02,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:02,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:02,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:02,075 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:07,078 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:07,078 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:07,078 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:07,078 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:07,078 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:07,078 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:07,078 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:07,078 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:07,078 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:07,079 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:12,080 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:12,080 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:12,080 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:12,080 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:12,080 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:12,080 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:12,080 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:12,080 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:12,080 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:12,080 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:17,082 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:17,082 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:17,082 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:17,082 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:17,082 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:17,084 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:17,084 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:17,084 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:17,084 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:17,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:22,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:22,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:22,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:22,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:22,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:22,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:22,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:22,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:22,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:22,085 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:27,087 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:27,087 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:27,087 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:27,087 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:27,087 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:27,089 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:27,089 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:27,089 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:27,089 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:27,089 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:32,090 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:32,090 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:32,090 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:32,090 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:32,090 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:32,090 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:32,090 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:32,090 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:32,090 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:32,090 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:37,092 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:37,092 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:37,092 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:37,092 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:37,092 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:37,092 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:37,092 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:37,092 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:37,092 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:37,092 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:42,095 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:42,095 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:42,095 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:42,095 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:42,095 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:42,095 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:42,095 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:42,095 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:42,095 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:42,095 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:47,098 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:47,098 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:47,098 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:47,098 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:47,098 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:47,098 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:47,098 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:47,098 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:47,098 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:47,098 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:52,100 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:52,100 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:52,100 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:52,100 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:52,100 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:52,100 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:52,100 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:52,100 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:52,100 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:52,100 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:57,103 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:57,103 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:57,103 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:57,103 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:57,103 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:57,103 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:57,103 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:57,103 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:57,103 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:50:57,103 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:02,106 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:02,106 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:02,106 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:02,106 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:02,106 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:02,106 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:02,106 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:02,106 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:02,106 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:02,106 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:07,109 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:07,109 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:07,109 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:07,109 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:07,109 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:07,109 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:07,109 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:07,109 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:07,109 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:07,109 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:12,112 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:12,112 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:12,112 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:12,112 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:12,112 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:12,112 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:12,112 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:12,112 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:12,112 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:12,112 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:17,115 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:17,115 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:17,115 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:17,115 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:17,115 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:17,115 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:17,115 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:17,115 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:17,115 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:17,115 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:22,117 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:22,117 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:22,117 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:22,117 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:22,117 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:22,117 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:22,117 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:22,117 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:22,117 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:22,117 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:27,120 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:27,120 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:27,120 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:27,120 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:27,120 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:27,120 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:27,120 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:27,120 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:27,120 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:27,120 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:32,124 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:32,124 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:32,124 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:32,124 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:32,124 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:32,124 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:32,124 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:32,124 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:32,124 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:32,124 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:37,125 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:37,125 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:37,125 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:37,125 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:37,125 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:37,125 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:37,125 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:37,125 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:37,125 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:37,125 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:42,129 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:42,129 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:42,130 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:42,130 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:42,130 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:42,130 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:42,130 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:42,130 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:42,130 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:51:42,130 - Error al guardar los datos en la base de datos: Cannot assign "2": "Bayunca.plant_id" must be a "Plant" instance.
+2025-01-05 15:52:06,531 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-05 16:01:17,012 - Method Not Allowed: /api/client/start/Bayunca2/
+2025-01-05 16:07:35,856 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\models.py changed, reloading.
+2025-01-06 07:51:33,860 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\iec104_client.py changed, reloading.
+2025-01-06 07:54:39,607 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 07:54:58,611 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\iec104_client.py changed, reloading.
+2025-01-06 09:12:18,747 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 09:13:08,182 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 09:18:16,394 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:29:42,602 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:32:43,783 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:33:59,755 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:36:36,552 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:38:31,404 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:38:48,237 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:38:51,055 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:39:54,191 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:50:00,084 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:50:00,413 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-06 15:59:53,940 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 15:59:54,555 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:01:22,135 - No response received after 3 retries, continue with next request
+2025-01-06 16:01:22,135 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:01:45,800 - No response received after 3 retries, continue with next request
+2025-01-06 16:01:45,800 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:02:09,463 - No response received after 3 retries, continue with next request
+2025-01-06 16:02:09,463 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:02:33,056 - No response received after 3 retries, continue with next request
+2025-01-06 16:02:33,056 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:04:15,977 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:04:16,192 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:04:51,164 - No response received after 3 retries, continue with next request
+2025-01-06 16:04:51,164 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:07:16,703 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:07:17,194 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:07:31,104 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:07:31,578 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:08:01,780 - No response received after 3 retries, continue with next request
+2025-01-06 16:08:01,780 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:08:25,466 - No response received after 3 retries, continue with next request
+2025-01-06 16:08:25,466 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:08:49,192 - No response received after 3 retries, continue with next request
+2025-01-06 16:08:49,192 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:09:12,731 - No response received after 3 retries, continue with next request
+2025-01-06 16:09:12,731 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:19:31,540 - No response received after 3 retries, continue with next request
+2025-01-06 16:19:31,540 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:19:55,203 - No response received after 3 retries, continue with next request
+2025-01-06 16:19:55,203 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:24:03,444 - No response received after 3 retries, continue with next request
+2025-01-06 16:24:03,444 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:29:17,848 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:29:17,862 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:30:13,793 - No response received after 3 retries, continue with next request
+2025-01-06 16:30:13,793 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:30:37,242 - No response received after 3 retries, continue with next request
+2025-01-06 16:30:37,242 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:31:00,689 - No response received after 3 retries, continue with next request
+2025-01-06 16:31:00,689 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:31:24,160 - No response received after 3 retries, continue with next request
+2025-01-06 16:31:24,160 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:31:47,751 - No response received after 3 retries, continue with next request
+2025-01-06 16:31:47,751 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:32:11,372 - No response received after 3 retries, continue with next request
+2025-01-06 16:32:11,372 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:32:34,813 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:37:00,029 - No response received after 3 retries, continue with next request
+2025-01-06 16:37:00,029 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:37:23,713 - No response received after 3 retries, continue with next request
+2025-01-06 16:37:23,713 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:37:47,396 - No response received after 3 retries, continue with next request
+2025-01-06 16:37:47,396 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:38:11,014 - No response received after 3 retries, continue with next request
+2025-01-06 16:38:11,014 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:38:34,647 - No response received after 3 retries, continue with next request
+2025-01-06 16:38:34,647 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:38:58,215 - No response received after 3 retries, continue with next request
+2025-01-06 16:38:58,215 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 16:39:21,829 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:39:45,372 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:40:08,931 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:40:32,634 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:40:56,227 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:41:19,862 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:41:43,474 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:42:07,046 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:42:30,737 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:42:54,300 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:43:17,915 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:45:50,650 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:46:09,789 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:46:09,818 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:46:14,278 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 16:51:14,854 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:51:15,078 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:57:07,073 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 16:57:07,626 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:05:00,564 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:05:01,159 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:05:27,528 - No response received after 3 retries, continue with next request
+2025-01-06 17:05:27,528 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 17:05:50,931 - No response received after 3 retries, continue with next request
+2025-01-06 17:05:50,931 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 17:15:37,350 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:15:37,428 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:15:43,818 - Error inesperado: 1 < count 350 < 125 !
+2025-01-06 17:15:53,823 - Error inesperado: 1 < count 350 < 125 !
+2025-01-06 17:16:03,824 - Error inesperado: 1 < count 350 < 125 !
+2025-01-06 17:16:13,825 - Error inesperado: 1 < count 350 < 125 !
+2025-01-06 17:16:23,826 - Error inesperado: 1 < count 350 < 125 !
+2025-01-06 17:16:33,826 - Error inesperado: 1 < count 350 < 125 !
+2025-01-06 17:17:24,185 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 17:17:34,188 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 17:17:44,188 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 17:17:54,189 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 17:18:04,189 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 17:18:14,190 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 17:18:24,191 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 17:19:11,102 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:19:11,495 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:19:48,300 - No response received after 3 retries, continue with next request
+2025-01-06 17:19:48,300 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 17:49:43,447 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:49:43,447 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:50:30,797 - No response received after 3 retries, continue with next request
+2025-01-06 17:50:30,797 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 17:50:53,296 - No response received after 3 retries, continue with next request
+2025-01-06 17:50:53,296 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 17:51:15,833 - No response received after 3 retries, continue with next request
+2025-01-06 17:51:15,833 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 17:51:38,290 - No response received after 3 retries, continue with next request
+2025-01-06 17:51:38,290 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 17:52:00,807 - No response received after 3 retries, continue with next request
+2025-01-06 17:52:00,807 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 17:52:03,060 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:52:03,470 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:56:36,697 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:56:37,329 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:58:32,044 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:58:32,044 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 17:59:05,753 - No response received after 3 retries, continue with next request
+2025-01-06 17:59:05,754 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 17:59:28,261 - No response received after 3 retries, continue with next request
+2025-01-06 17:59:28,261 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 17:59:50,759 - No response received after 3 retries, continue with next request
+2025-01-06 17:59:50,759 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:00:13,242 - No response received after 3 retries, continue with next request
+2025-01-06 18:00:13,242 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:00:35,710 - No response received after 3 retries, continue with next request
+2025-01-06 18:00:35,710 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:02:26,650 - No response received after 3 retries, continue with next request
+2025-01-06 18:02:26,650 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:02:54,361 - No response received after 3 retries, continue with next request
+2025-01-06 18:02:54,361 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:06:07,589 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 18:06:07,644 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 18:06:31,612 - No response received after 3 retries, continue with next request
+2025-01-06 18:06:31,612 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:08:25,878 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 18:08:26,424 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 18:08:52,197 - No response received after 3 retries, continue with next request
+2025-01-06 18:08:52,197 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:09:19,803 - No response received after 3 retries, continue with next request
+2025-01-06 18:09:19,803 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:09:47,469 - No response received after 3 retries, continue with next request
+2025-01-06 18:09:47,469 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:10:15,115 - No response received after 3 retries, continue with next request
+2025-01-06 18:10:15,115 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:10:42,832 - No response received after 3 retries, continue with next request
+2025-01-06 18:10:42,833 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:11:10,565 - No response received after 3 retries, continue with next request
+2025-01-06 18:11:10,565 - Excepción Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 18:11:38,181 - Excepción Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 18:12:05,883 - Excepción Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 18:12:33,545 - Excepción Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 18:13:01,183 - Excepción Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 18:13:28,837 - Excepción Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 18:13:55,950 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 18:13:55,964 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 18:13:56,377 - Excepción Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 18:14:23,956 - Excepción Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 18:17:46,404 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 18:17:46,979 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 18:24:17,583 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 18:24:17,618 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 18:26:15,150 - No response received after 3 retries, continue with next request
+2025-01-06 18:26:15,151 - Error de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:27:54,704 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:27:54,721 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:32:14,842 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:32:15,160 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:32:25,579 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 21:32:35,582 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 21:32:45,583 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 21:32:55,583 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 21:33:05,584 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 21:33:15,585 - Error inesperado: 1 < count 1000 < 125 !
+2025-01-06 21:38:14,731 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:38:15,085 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:38:43,188 - No response received after 3 retries, continue with next request
+2025-01-06 21:38:43,189 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:39:06,756 - No response received after 3 retries, continue with next request
+2025-01-06 21:39:06,756 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:39:30,341 - No response received after 3 retries, continue with next request
+2025-01-06 21:39:30,341 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:39:53,930 - No response received after 3 retries, continue with next request
+2025-01-06 21:39:53,930 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:40:17,569 - No response received after 3 retries, continue with next request
+2025-01-06 21:40:17,569 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:40:41,136 - No response received after 3 retries, continue with next request
+2025-01-06 21:40:41,136 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:41:04,756 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 21:41:28,304 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 21:41:51,930 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 21:42:15,607 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-06 21:51:18,057 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:51:18,083 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:52:24,255 - No response received after 3 retries, continue with next request
+2025-01-06 21:52:24,255 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:53:15,828 - No response received after 3 retries, continue with next request
+2025-01-06 21:53:15,828 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:54:07,385 - No response received after 3 retries, continue with next request
+2025-01-06 21:54:07,385 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:54:58,918 - No response received after 3 retries, continue with next request
+2025-01-06 21:54:58,919 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:55:50,530 - No response received after 3 retries, continue with next request
+2025-01-06 21:55:50,530 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:56:15,381 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:56:15,669 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:57:14,470 - No response received after 3 retries, continue with next request
+2025-01-06 21:57:14,470 - Error de E/S en Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request. Intentando reconectar...
+2025-01-06 21:57:14,470 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:58:06,051 - No response received after 3 retries, continue with next request
+2025-01-06 21:58:06,051 - Error de E/S en Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request. Intentando reconectar...
+2025-01-06 21:58:06,051 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-06 21:58:35,666 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:58:36,360 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-06 21:59:25,898 - No response received after 3 retries, continue with next request
+2025-01-06 21:59:25,898 - Error de E/S en Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request. Intentando reconectar...
+2025-01-06 21:59:25,898 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 06:30:23,543 - No response received after 3 retries, continue with next request
+2025-01-07 06:30:23,543 - Error de E/S en Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request. Intentando reconectar...
+2025-01-07 06:30:23,543 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 06:49:13,626 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-07 06:51:30,969 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-07 06:51:42,548 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client.py changed, reloading.
+2025-01-07 06:53:26,274 - No response received after 3 retries, continue with next request
+2025-01-07 06:53:26,274 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 06:53:39,361 - No response received after 3 retries, continue with next request
+2025-01-07 06:53:39,361 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 06:53:52,402 - No response received after 3 retries, continue with next request
+2025-01-07 06:53:52,402 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 06:54:16,601 - No response received after 3 retries, continue with next request
+2025-01-07 06:54:16,601 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 06:54:29,596 - No response received after 3 retries, continue with next request
+2025-01-07 06:54:29,596 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 06:54:42,591 - No response received after 3 retries, continue with next request
+2025-01-07 06:54:42,591 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 06:55:06,603 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:55:19,623 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:55:32,621 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:55:56,690 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:56:09,678 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:56:22,756 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:56:46,840 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:57:00,155 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:57:13,201 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:57:37,295 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:57:50,343 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:58:03,372 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:58:27,489 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 06:58:40,554 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 07:19:56,869 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-07 07:19:57,441 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
