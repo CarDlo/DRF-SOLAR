@@ -94,13 +94,13 @@ python manage.py loaddata plants_seeder.json
 ```
 Carga un conjunto de datos predefinido desde un archivo JSON en la base de datos. Este archivo contiene información sobre las plantas disponibles para ser utilizadas en la aplicación.
 
-8. **Cargar datos de las señales**
+9. **Cargar datos de las señales**
 ```bash
 python manage.py loaddata psignals_export.json
 ```
 Carga un conjunto de datos predefinido desde un archivo JSON en la base de datos. Este archivo contiene información sobre las señales disponibles para ser utilizadas en la planta La villa.
 
-9. **Iniciar el servidor de desarrollo**
+10. **Iniciar el servidor de desarrollo**
 ```bash
 python manage.py runserver
 ```
@@ -135,7 +135,7 @@ Para más detalles sobre los modelos de plantas, consultar la documentación en 
 - **country**: País donde se encuentra la planta. Facilita clasificar las plantas por ubicación nacional.
 - **potenciaDC**: Potencia en corriente directa (DC) de la planta en megavatios (MW). Representa la capacidad energética instalada.
 - **scada**: Sistema de supervisión y adquisición de datos (SCADA) utilizado en la planta. Permite gestionar y monitorizar las operaciones.
-- **protocoloComunicacion**: Protocolo de comunicación usado por la planta (ejemplo: `MODBUS` o `IEC104`). Define cómo se transmiten los datos entre dispositivos.
+- **protocoloComunicacion**: Protocolo de comunicación usado por la planta (ejemplo: `MODBUS` o `MODBUS-REV` o `IEC104`). Define cómo se transmiten los datos entre dispositivos.
 - **ip**: Dirección IP del sistema de control o SCADA de la planta. Es necesario para la comunicación con la planta.
 - **puerto**: Puerto de comunicación asociado al protocolo usado por la planta. Define el punto de acceso para las conexiones.
 - **modelo**: Modelo asociado a la planta. Permite guardar la informacion de la plantaen la tabla(modelo especificado).
@@ -143,6 +143,33 @@ Para más detalles sobre los modelos de plantas, consultar la documentación en 
 - **metadata**: Información adicional o personalizada relacionada con la planta, en formato JSON. Se utiliza para almacenar detalles específicos que no están cubiertos por otras columnas. Para el caso de modbus se requiere informacion de valores tales como: `start_address`: Dirección inicial de lectura, `max_registers`: Cantidad máxima de registros a leer, `interval`: Intervalo en segundos entre lecturas, `block_registers`: bloques maximos de lectura.
 Para IEC104 en el campo metadata se debe agregar los valores de `tick_rate_ms, command_timeout_ms, time_sender_sleep_ms, time_connect_ms y originator_address` en formato JSON.
 - **active**: Columna de tipo boolean para identificar si la planta se encuentra activa(true) o inactiva(false), si el valor es (true) el cliente ejecutara la captura de datos.
+
+### Protocolos Disponibles
+
+En este sistema se soportan los siguientes protocolos de comunicación para la captura y registro de señales desde equipos industriales:
+
+- **MODBUS**
+- **MODBUS-REV**
+- **IEC104**
+
+### Descripción de los Protocolos
+
+#### MODBUS
+El protocolo **MODBUS** es un estándar de comunicación serie utilizado para la transmisión de datos entre dispositivos electrónicos industriales. Este protocolo permite la lectura y escritura de registros en dispositivos como PLCs, RTUs y sensores.
+
+#### MODBUS-REV
+El protocolo **MODBUS-REV** es una variante del protocolo MODBUS estándar con una restricción adicional para el registro de señales.
+
+- **Condición de registro:**
+  - Solo se registrarán las señales que:
+    - Estén en estado **`active`** en la tabla `señales`.
+    - Estén previamente registradas en la tabla `señales`.
+  - Las señales no registradas o inactivas **no se guardan** en las tablas del modelo.
+
+- **Propósito:** Garantizar la consistencia y control sobre los datos almacenados, evitando la creación de registros innecesarios o incorrectos.
+
+#### IEC104
+El protocolo **IEC104** (IEC 60870-5-104) es un estándar de comunicación utilizado principalmente en sistemas de automatización y control remoto, común en subestaciones eléctricas y sistemas SCADA.
 
 #### **Modbus Configuración**
 
