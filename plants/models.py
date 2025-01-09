@@ -9,6 +9,7 @@ class Plant(models.Model):
     PROTOCOLO_CHOICES = [
         ('IEC104', 'IEC104'),
         ('MODBUS', 'MODBUS'),
+        ('MODBUS-REV', 'MODBUS-REV'),
     ]
 
     PLANT_CHOICES = [
@@ -25,7 +26,7 @@ class Plant(models.Model):
     ]
 
 
-    name = models.CharField(max_length=255, unique=True, help_text="Nombre descriptivo de la planta fotovoltaica.")
+    name = models.CharField(unique=True, max_length=15, help_text="Nombre descriptivo de la planta fotovoltaica.")
     province = models.CharField(max_length=255, help_text="Provincia o región donde está ubicada la planta.")
     country = models.CharField(max_length=255, help_text="País donde se encuentra la planta.")
     potencia_dc = models.FloatField(help_text="Potencia en corriente directa (DC) de la planta, expresada en MW.")
@@ -77,6 +78,7 @@ class Signs(models.Model):
     max_value = models.FloatField(null=True, blank=True, help_text="Valor máximo permitido para la variable monitoreada.")
     protocolo = models.CharField(max_length=10, choices=PROTOCOLO_CHOICES, null=True, blank=True, help_text="Protocolo de comunicación utilizado para la transmisión de datos. Puede ser MODBUS o IEC104.")
     metadata = models.JSONField(null=True, blank=True, help_text="Metadatos adicionales del registro, utilizados para almacenar información extra sobre la medición. Aplica para Modbus e IEC104.")
+    active = models.BooleanField(default=True, help_text="Indica si la señal está activa o inactiva, es decir si se registra en la base de datos o se ignora.")
     created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
     class Meta:

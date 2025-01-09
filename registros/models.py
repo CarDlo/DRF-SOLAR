@@ -4,12 +4,12 @@ from plants.models import Plant
 
 
 class Bayunca(models.Model):
-    REG_CA = models.IntegerField(help_text="Código de Registro MODBUS o Dirección Común IEC104.")
+    REG_CA = models.IntegerField(db_index=True, help_text="Código de Registro MODBUS o Dirección Común IEC104.")
     value = models.FloatField(help_text="Valor medido o capturado del registro.")
     direccion = models.IntegerField(null=True, blank=True, help_text="Dirección IOA de IEC104, no se usa en MODBUS.")
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="bayunca_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
-    created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
@@ -21,12 +21,12 @@ class Bayunca(models.Model):
 
 
 class LaVilla(models.Model):
-    REG_CA = models.IntegerField(help_text="Código de Registro MODBUS o Dirección Común IEC104.")
+    REG_CA = models.IntegerField(db_index=True, help_text="Código de Registro MODBUS o Dirección Común IEC104.")
     value = models.FloatField(help_text="Valor medido o capturado del registro.")
     direccion = models.IntegerField(null=True, blank=True, help_text="Dirección IOA de IEC104, no se usa en MODBUS.")
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="lavilla_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
-    created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
@@ -39,12 +39,12 @@ class LaVilla(models.Model):
 
 ########
 class Oldt(models.Model):
-    REG_CA = models.IntegerField(help_text="Código de Registro MODBUS o Dirección Común IEC104.")
+    REG_CA = models.IntegerField(db_index=True, help_text="Código de Registro MODBUS o Dirección Común IEC104.")
     value = models.FloatField(help_text="Valor medido o capturado del registro.")
     direccion = models.IntegerField(null=True, blank=True, help_text="Dirección IOA de IEC104, no se usa en MODBUS.")
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="oldt_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
-    created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
@@ -56,12 +56,12 @@ class Oldt(models.Model):
 
 
 class Solchacras(models.Model):
-    REG_CA = models.IntegerField(help_text="Código de Registro MODBUS o Dirección Común IEC104.")
+    REG_CA = models.IntegerField(db_index=True, help_text="Código de Registro MODBUS o Dirección Común IEC104.")
     value = models.FloatField(help_text="Valor medido o capturado del registro.")
     direccion = models.IntegerField(null=True, blank=True, help_text="Dirección IOA de IEC104, no se usa en MODBUS.")
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="solchacras_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
-    created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
@@ -73,12 +73,12 @@ class Solchacras(models.Model):
 
 
 class Solsantonio(models.Model):
-    REG_CA = models.IntegerField(help_text="Código de Registro MODBUS o Dirección Común IEC104.")
+    REG_CA = models.IntegerField(db_index=True, help_text="Código de Registro MODBUS o Dirección Común IEC104.")
     value = models.FloatField(help_text="Valor medido o capturado del registro.")
     direccion = models.IntegerField(null=True, blank=True, help_text="Dirección IOA de IEC104, no se usa en MODBUS.")
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="solsantonio_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
-    created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
@@ -90,12 +90,12 @@ class Solsantonio(models.Model):
 
 
 class Solhuaqui(models.Model):
-    REG_CA = models.IntegerField(help_text="Código de Registro MODBUS o Dirección Común IEC104.")
+    REG_CA = models.IntegerField(db_index=True, help_text="Código de Registro MODBUS o Dirección Común IEC104.")
     value = models.FloatField(help_text="Valor medido o capturado del registro.")
     direccion = models.IntegerField(null=True, blank=True, help_text="Dirección IOA de IEC104, no se usa en MODBUS.")
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="solhuaqui_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
-    created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
@@ -107,12 +107,12 @@ class Solhuaqui(models.Model):
 
 
 class Sanpedro(models.Model):
-    REG_CA = models.IntegerField(help_text="Código de Registro MODBUS o Dirección Común IEC104.")
+    REG_CA = models.IntegerField(db_index=True, help_text="Código de Registro MODBUS o Dirección Común IEC104.")
     value = models.FloatField(help_text="Valor medido o capturado del registro.")
     direccion = models.IntegerField(null=True, blank=True, help_text="Dirección IOA de IEC104, no se usa en MODBUS.")
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="sanpedro_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
-    created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
@@ -124,12 +124,12 @@ class Sanpedro(models.Model):
 
 
 class Gonzaenergy(models.Model):
-    REG_CA = models.IntegerField(help_text="Código de Registro MODBUS o Dirección Común IEC104.")
+    REG_CA = models.IntegerField(db_index=True, help_text="Código de Registro MODBUS o Dirección Común IEC104.")
     value = models.FloatField(help_text="Valor medido o capturado del registro.")
     direccion = models.IntegerField(null=True, blank=True, help_text="Dirección IOA de IEC104, no se usa en MODBUS.")
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="gonzaenergy_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
-    created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
@@ -140,12 +140,12 @@ class Gonzaenergy(models.Model):
         return f"Gonzaenergy {self.id} - {self.REG_CA}"
 
 class Produlesti(models.Model):
-    REG_CA = models.IntegerField(help_text="Código de Registro MODBUS o Dirección Común IEC104.")
+    REG_CA = models.IntegerField(db_index=True, help_text="Código de Registro MODBUS o Dirección Común IEC104.")
     value = models.FloatField(help_text="Valor medido o capturado del registro.")
     direccion = models.IntegerField(null=True, blank=True, help_text="Dirección IOA de IEC104, no se usa en MODBUS.")
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="produlesti_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
-    created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
@@ -156,12 +156,12 @@ class Produlesti(models.Model):
         return f"Produlesti {self.id} - {self.REG_CA}"
     
 class General(models.Model):
-    REG_CA = models.IntegerField(help_text="Código de Registro MODBUS o Dirección Común IEC104.")
+    REG_CA = models.IntegerField(db_index=True, help_text="Código de Registro MODBUS o Dirección Común IEC104.")
     value = models.FloatField(help_text="Valor medido o capturado del registro.")
     direccion = models.IntegerField(null=True, blank=True, help_text="Dirección IOA de IEC104, no se usa en MODBUS.")
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="general_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
-    created_at = models.DateTimeField(auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
+    created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
     updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:

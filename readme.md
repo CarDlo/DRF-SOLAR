@@ -9,20 +9,69 @@ cd <nombre_del_proyecto>
 ```
 Clona el repositorio del proyecto y accede al directorio del proyecto.
 
-2. **Crear y activar un entorno virtual**
+2. **Crear un entorno virtual**
 ```bash
 python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
 ```
-Crea un entorno virtual aislado para la instalación de dependencias y lo activa.
+Crea un entorno virtual aislado para la instalación de dependencias.
 
-3. **Instalar dependencias**
+3. **Activar el entorno virtual**
+
+Este documento explica cómo activar un entorno virtual de Python en Visual Studio Code de dos maneras: utilizando la terminal y seleccionando el compilador.
+
+#### Opción 1: Activación con la terminal
+
+##### 1. Abre la terminal en VS Code.
+##### 2. Ejecuta el siguiente comando para activar el entorno virtual (Windows):
+   ```bash
+   .\venv\Scripts\activate
+   ```
+   En Mac/Linux:
+   ```bash
+   source venv/bin/activate
+   ```
+##### 3. La terminal debería mostrar el entorno virtual activo con el prefijo `(venv)`.
+
+#### Opción 2: Seleccionando el intérprete desde VS Code
+
+##### 1. Cierra la terminal de VS Code si está abierta.
+##### 2. Abre la paleta de comandos con `Ctrl + Shift + P` y escribe: **Python: Select Interpreter**.
+##### 3. Selecciona la opción con la ruta del entorno virtual, generalmente aparece como:
+   ```plaintext
+   Python 3.12.6 ('venv': venv) .\venv\Scripts\python.exe
+   ```
+##### 4. Abre nuevamente la terminal (`Ctrl + ~`).
+##### 5. Al iniciar la terminal, debería aparecer una notificación en la parte superior derecha indicando que el entorno virtual se ha activado exitosamente con un mensaje similar a:
+   ```plaintext
+   Python virtual environment was successfully activated, even though "(venv)" indicator may not be present in the terminal prompt.
+   ```
+
+##### Nota
+##### - Si no aparece el indicador `(venv)` en la terminal, pero seleccionaste el entorno correctamente, la notificación confirmará que está activo.
+##### - Asegúrate de haber creado previamente el entorno virtual con:
+   ```bash
+   python -m venv venv
+   ```
+4. **Instalar dependencias**
 ```bash
 pip install -r requirements.txt
 ```
 Instala las dependencias necesarias listadas en `requirements.txt`.
 
-4. **Preparar la base de datos**
+5. **Generación de una SECRET\_KEY en Django**
+
+Es necesario generar una nueva `SECRET_KEY` en un proyecto Django, para generar esta clave sigue los siguientes pasos:
+
+##### 1. Ejecuta el siguiente comando para generar una clave secreta:
+   ```bash
+   python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+   ```
+##### 2. Copia la clave generada y actualiza tu archivo `.env`:
+   ```python
+   SECRET_KEY = 'tu-nueva-clave-generada'
+   ```
+
+6. **Preparar la base de datos**
 ```bash
 python manage.py makemigrations
 python manage.py migrate
@@ -30,19 +79,28 @@ python manage.py migrate
 `makemigrations` genera archivos de migración, que son instrucciones para modificar la estructura de la base de datos basándose en los cambios realizados en los modelos.
 `migrate` aplica esas migraciones a la base de datos, asegurando que esté sincronizada con los modelos definidos.
 
-5. **Crear un superusuario (opcional)**
+La base de datos que se se encuentra configurada por defecto es `db.sqlite3` la cual se encuentra ubicada en la raiz del proyecto, se recomienda dejar esta abse de datos para desarrollo y en produccion cambiar a una base de datos tipo postgresql. La base de datos tipo postgresql se debe configurar en el archivo .env.
+
+7. **Crear un superusuario (opcional)**
 ```bash
 python manage.py createsuperuser
 ```
 Crea un usuario administrador para acceder al panel de administración de Django.
+Para acceder al administrador de Django, visita: `http://localhost:8000/admin/`
 
-6. **Cargar datos de las plantas**
+8. **Cargar datos de las plantas**
 ```bash
 python manage.py loaddata plants_seeder.json
 ```
 Carga un conjunto de datos predefinido desde un archivo JSON en la base de datos. Este archivo contiene información sobre las plantas disponibles para ser utilizadas en la aplicación.
 
-7. **Iniciar el servidor de desarrollo**
+8. **Cargar datos de las señales**
+```bash
+python manage.py loaddata psignals_export.json
+```
+Carga un conjunto de datos predefinido desde un archivo JSON en la base de datos. Este archivo contiene información sobre las señales disponibles para ser utilizadas en la planta La villa.
+
+9. **Iniciar el servidor de desarrollo**
 ```bash
 python manage.py runserver
 ```
@@ -51,7 +109,7 @@ Inicia el servidor de desarrollo de Django para probar la aplicación localmente
 El proyecto estará disponible en `http://localhost:8000`.
 
 Para acceder a la documentación de los endpoints, visita: `http://localhost:8000/docs/`
-Para acceder al administrador de Django, visita: `http://localhost:8000/admin/`
+
 
 ## Aplicación Plantas
 La aplicación Plantas incluye los siguientes modelos:
@@ -96,7 +154,7 @@ En el campo `metadata` se debe agregar los valores de `start_address`, `max_regi
 - `block_registers`: 125
 
 
-### Descripción de los Campos:
+#### Descripción de los Campos:
 
 - **`start_address`**: Dirección inicial de lectura en el dispositivo Modbus.
 - **`max_registers`**: Cantidad máxima de registros a leer desde la dirección inicial.
@@ -145,7 +203,7 @@ En el campo `metadata` se debe agregar los valores de `tick_rate_ms`, `command_t
 }
 ```
 ---
-## **Nota importante**
+#### **Nota importante**
 - El campo `protocoloComunicacion` solo acepta los valores:
   - `MODBUS`
   - `IEC104`
@@ -200,7 +258,7 @@ Para más detalles sobre los endpoints relacionados con señales, consultar la d
 - **planta_id**: Identificación única de la planta a la que pertenece el registro. Aplica para Modbus e IEC104.
 - **protocolo**: Protocolo de comunicación utilizado para la transmisión de datos. Debe ser `MODBUS` o `IEC104`.
 - **metadata**: Metadatos adicionales del registro, utilizados para almacenar información extra sobre la medición. Aplica para Modbus e IEC104.
-
+- **active**: Columna de tipo boolean para identificar si la señal esta activa o no, es decir si se debe registrar en la base de datos o ignorar.
 ## Aplicación Registros
 
 La aplicación `Registros` contiene las siguientes plantas:
@@ -307,3 +365,117 @@ curl -X POST http://localhost:8000/api/token/refresh/ \
 - No comparta sus tokens con terceros para mantener la seguridad de la API.
 
 Para más información, consulte con el administrador de la API.
+
+## Uso del Endpoint para consulta de registros `/api/{planta}`
+
+## Descripción
+El endpoint `/api/{planta}` permite realizar consultas sobre los registros del modelo `{planta}` con opciones de filtrado avanzadas. Utiliza `DjangoFilterBackend` para realizar búsquedas específicas y aplicar cálculos agregados como promedios y muestreo de datos.
+
+### Endpoints disponibles
+La búsqueda y filtrado está disponible en los siguientes endpoints:
+- `/api/bayunca`
+- `/api/lavilla`
+- `/api/oldt`
+- `/api/solchacras`
+- `/api/solsantonio`
+- `/api/solhuaqui`
+- `/api/sanpedro`
+- `/api/sonzaenergy`
+- `/api/produlesti`
+- `/api/general`
+
+## Tecnologías Utilizadas
+Esta API utiliza dos técnicas fundamentales para la optimización del manejo de datos: **muestreo** y **promedio diario**.
+
+- **Muestreo(Data Downsampling):** Se utiliza para devolver una muestra representativa de los registros, reduciendo la cantidad de datos enviados al cliente. Esto es útil para visualizaciones o reportes que no requieren datos detallados, permitiendo especificar la frecuencia con la que se seleccionan registros.
+
+- **Promedio Diario(Agregación):** Calcula el promedio de un valor (`REG_CA`) agrupado por día. Esto ayuda a analizar tendencias sin necesidad de procesar cada registro individual, ideal para reportes de rendimiento o monitoreo de datos.
+
+## URL Base
+```
+GET /api/lavilla/
+```
+
+## Parámetros Disponibles
+
+### 1. `startDate` (opcional)
+- **Descripción:** Filtra registros desde esta fecha.
+- **Formato:** `AAAA-MM-DD`
+- **Ejemplo:** `?startDate=2024-01-01`
+
+### 2. `endDate` (opcional)
+- **Descripción:** Filtra registros hasta esta fecha.
+- **Formato:** `AAAA-MM-DD`
+- **Ejemplo:** `?endDate=2024-01-31`
+
+### 3. `REG_CA` (opcional)
+- **Descripción:** Filtra registros con un código específico MODBUS o dirección común IEC104.
+- **Formato:** Número entero.
+- **Ejemplo:** `?REG_CA=100`
+
+### 4. `direccion` (opcional)
+- **Descripción:** Filtra registros por la dirección IOA de IEC104.
+- **Formato:** Número entero.
+- **Ejemplo:** `?direccion=50`
+
+### 5. `promedio_diario` (opcional)
+- **Descripción:** Calcula el promedio diario de los registros.
+- **Formato:** Booleano (`True` o `False`)
+- **Ejemplo:** `?promedio_diario=True`
+
+### 6. `muestreo` (opcional)
+- **Descripción:** Devuelve 1 de cada `n` registros.
+- **Formato:** Número entero positivo.
+- **Ejemplo:** `?muestreo=100` (devuelve 1 de cada 100 registros)
+
+---
+
+## Ejemplos de Uso
+
+### 1. **Obtener registros filtrados por fecha:**
+Este ejemplo devuelve los registros que fueron creados entre el 1 y el 31 de enero de 2024.
+```
+GET /api/lavilla/?startDate=2024-01-01&endDate=2024-01-31
+```
+
+### 2. **Obtener promedio diario:**
+Este ejemplo devuelve el promedio diario de los valores `REG_CA` registrados.
+```
+GET /api/lavilla/?promedio_diario=True
+```
+
+### 3. **Obtener registros con muestreo de 1 cada 100 registros:**
+Este ejemplo devuelve 1 registro de cada 100.
+```
+GET /api/lavilla/?muestreo=100
+```
+
+### 4. **Filtrar por `REG_CA` y aplicar muestreo:**
+Devuelve solo registros con un `REG_CA` igual a 120, aplicando un muestreo de 1 cada 50 registros.
+```
+GET /api/lavilla/?REG_CA=120&muestreo=50
+```
+
+### 5. **Combinar múltiples filtros: promedio diario y rango de fechas:**
+Este ejemplo devuelve el promedio diario de `REG_CA` entre el 1 y el 15 de enero de 2024.
+```
+GET /api/lavilla/?startDate=2024-01-01&endDate=2024-01-15&promedio_diario=True
+```
+
+### 6. **Filtrar por rango de fechas, muestreo y código `REG_CA`:**
+Este ejemplo devuelve 1 de cada 50 registros con `REG_CA=120` en el rango de fechas del 1 al 15 de enero de 2024.
+```
+GET /api/lavilla/?startDate=2024-01-01&endDate=2024-01-15&muestreo=50&REG_CA=120
+```
+
+---
+
+## Notas Importantes
+- **Filtrado Combinado:** Se pueden combinar varios filtros para obtener resultados más específicos.  
+- **Optimización:** Se recomienda usar `promedio_diario` o `muestreo` para grandes volúmenes de datos.
+
+---
+
+## Contacto
+Para dudas o soporte, contactar al equipo de desarrollo.
+

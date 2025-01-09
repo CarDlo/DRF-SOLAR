@@ -9,6 +9,7 @@ import json
 from .fetch_plants_service import fetch_plants
 from registros.clients.iec104_client import start_iec104_client
 from registros.clients.modbus_client import start_modbus_client
+from registros.clients.modbus_client_rev import start_modbus_client_rev
 
 # Archivos de bloqueo y estado
 LOCK_FILE = "plants.lock"
@@ -74,6 +75,12 @@ def handle_plant(plant):
         block_registers = min(metadata.get("block_registers", 125), 125)
         start_modbus_client(plant_id, plant_name, ip, port, start_address, block_registers, interval, max_registers, modelo)
 
+    elif protocolo == "MODBUS-REV":
+        start_address = metadata.get("start_address", 0)
+        max_registers = metadata.get("max_registers", 10)
+        interval = metadata.get("interval", 5)
+        block_registers = min(metadata.get("block_registers", 125), 125)
+        start_modbus_client_rev(plant_id, plant_name, ip, port, start_address, block_registers, interval, max_registers, modelo)
     else:
         print(f"Protocolo desconocido para la planta: {plant.name} con protocolo {protocolo}")
 

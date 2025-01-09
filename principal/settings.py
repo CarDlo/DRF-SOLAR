@@ -20,10 +20,19 @@ load_dotenv()
 # Access environment variables
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
-DATABASE_URL = os.getenv('DATABASE_URL')
+DATABASE_TYPE = os.getenv('DATABASE_TYPE')
+DATABASE_NAME = os.getenv('DATABASE_NAME')
+DATABASE_USER = os.getenv('DATABASE_USER')
+DATABASE_PASS = os.getenv('DATABASE_PASS')
+DATABASE_HOST = os.getenv('DATABASE_HOST')
+DATABASE_PORT = os.getenv('DATABASE_PORT')
+
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -90,12 +99,26 @@ WSGI_APPLICATION = 'principal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# Configuración de la base de datos según la variable de entorno
+if DATABASE_TYPE == 'postgresql':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('DATABASE_NAME', 'mydatabase'),  # Nombre de la base de datos
+            'USER': os.getenv('DATABASE_USER', 'mydatabaseuser'),  # Usuario
+            'PASSWORD': os.getenv('DATABASE_PASS', 'mypassword'),  # Contraseña
+            'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),  # Host
+            'PORT': os.getenv('DATABASE_PORT', '5432'),  # Puerto
+        }
     }
-}
+else:
+    # Configuración por defecto (SQLite)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation

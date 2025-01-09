@@ -1,5 +1,5 @@
-# registros/filters.py
 import django_filters
+from django.db.models import Avg
 from .models import Bayunca, LaVilla, Oldt, Solchacras, Solsantonio, Solhuaqui, Sanpedro, Gonzaenergy, Produlesti, General
 
 class RegistroFilter(django_filters.FilterSet):
@@ -7,10 +7,25 @@ class RegistroFilter(django_filters.FilterSet):
     endDate = django_filters.DateTimeFilter(field_name='created_at', lookup_expr='lte', help_text="Formato: AAAA-MM-DD")
     REG_CA = django_filters.NumberFilter(field_name='REG_CA', help_text="Código de Registro MODBUS o Dirección Común IEC104")
     direccion = django_filters.NumberFilter(field_name='direccion', help_text="Dirección IOA de IEC104 o no aplica para MODBUS")
+    promedio_diario = django_filters.BooleanFilter(method='filtrar_promedio_diario', help_text="True para calcular el promedio diario")
+    muestreo = django_filters.NumberFilter(method='filtrar_muestreo', help_text="Especifica el intervalo de muestreo (e.g., 100 para 1 de cada 100 registros)")
+
+    def filtrar_promedio_diario(self, queryset, name, value):
+        if value:
+            return queryset.values('created_at__date').annotate(promedio_valor=Avg('REG_CA'))
+        return queryset
+
+    def filtrar_muestreo(self, queryset, name, value):
+        if value > 0:
+            # Seleccionar 1 de cada 'value' registros
+            return queryset.filter(id__mod=value == 0)
+        return queryset
 
     class Meta:
-        fields = ['startDate', 'endDate', 'REG_CA', 'direccion']
+        fields = ['startDate', 'endDate', 'REG_CA', 'direccion', 'promedio_diario', 'muestreo']
 
+
+# Subclases para cada modelo
 class BayuncaFilter(RegistroFilter):
     class Meta(RegistroFilter.Meta):
         model = Bayunca

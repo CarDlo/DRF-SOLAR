@@ -1490,3 +1490,70 @@ django.core.exceptions.FieldError: 'created_at' cannot be specified for Signs mo
 2025-01-07 06:58:40,554 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
 2025-01-07 07:19:56,869 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
 2025-01-07 07:19:57,441 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-07 12:19:00,796 - No response received after 3 retries, continue with next request
+2025-01-07 12:19:00,800 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:19:20,085 - No response received after 3 retries, continue with next request
+2025-01-07 12:19:20,085 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:24:06,907 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\admin.py changed, reloading.
+2025-01-07 12:25:03,415 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\admin.py changed, reloading.
+2025-01-07 12:25:03,418 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\admin.py changed, reloading.
+2025-01-07 12:25:42,450 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\admin.py changed, reloading.
+2025-01-07 12:25:42,601 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\admin.py changed, reloading.
+2025-01-07 12:26:29,653 - Connection to (127.0.0.1, 502) failed: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-07 12:26:29,653 - No se pudo conectar al dispositivo Modbus en 127.0.0.1:502
+2025-01-07 12:30:16,856 - No response received after 3 retries, continue with next request
+2025-01-07 12:30:16,856 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:30:18,302 - No response received after 3 retries, continue with next request
+2025-01-07 12:30:18,302 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:30:18,754 - No response received after 3 retries, continue with next request
+2025-01-07 12:30:18,754 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:30:30,843 - No response received after 3 retries, continue with next request
+2025-01-07 12:30:30,843 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:30:31,301 - No response received after 3 retries, continue with next request
+2025-01-07 12:30:31,301 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:30:37,884 - No response received after 3 retries, continue with next request
+2025-01-07 12:30:37,884 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:30:43,871 - No response received after 3 retries, continue with next request
+2025-01-07 12:30:43,871 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:30:44,325 - No response received after 3 retries, continue with next request
+2025-01-07 12:30:44,325 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:30:57,764 - No response received after 3 retries, continue with next request
+2025-01-07 12:30:57,764 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:31:07,762 - No response received after 3 retries, continue with next request
+2025-01-07 12:31:07,762 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:31:08,971 - No response received after 3 retries, continue with next request
+2025-01-07 12:31:08,971 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:47:01,902 - No response received after 3 retries, continue with next request
+2025-01-07 12:47:01,902 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:47:14,981 - No response received after 3 retries, continue with next request
+2025-01-07 12:47:14,981 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:47:28,070 - No response received after 3 retries, continue with next request
+2025-01-07 12:47:28,070 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:47:41,757 - No response received after 3 retries, continue with next request
+2025-01-07 12:47:41,757 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:47:56,548 - No response received after 3 retries, continue with next request
+2025-01-07 12:47:56,548 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:48:09,619 - No response received after 3 retries, continue with next request
+2025-01-07 12:48:09,619 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:48:26,084 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 12:48:45,605 - Excepción de Modbus: Modbus Error: [Input/Output] ERROR: No response received of the last 6 request, CLOSING CONNECTION.
+2025-01-07 12:50:52,529 - No response received after 3 retries, continue with next request
+2025-01-07 12:50:52,529 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:51:05,587 - No response received after 3 retries, continue with next request
+2025-01-07 12:51:05,587 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:51:18,734 - No response received after 3 retries, continue with next request
+2025-01-07 12:51:18,734 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 12:51:37,922 - No response received after 3 retries, continue with next request
+2025-01-07 12:51:37,922 - Excepción de Modbus: Modbus Error: [Input/Output] No response received after 3 retries, continue with next request
+2025-01-07 21:28:17,406 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.
+2025-01-07 21:30:04,566 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.
+2025-01-09 05:29:45,180 - Not Found: /favicon.ico
+2025-01-09 06:39:15,589 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\admin.py changed, reloading.
+2025-01-09 06:44:25,897 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-09 06:45:27,268 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client_rev.py changed, reloading.
+2025-01-09 06:47:14,213 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client_rev.py changed, reloading.
+2025-01-09 06:48:13,559 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-09 06:49:23,394 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\admin.py changed, reloading.
+2025-01-09 06:51:55,200 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\models.py changed, reloading.
+2025-01-09 06:56:32,223 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
+2025-01-09 06:56:38,061 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client_rev.py changed, reloading.

@@ -4,8 +4,8 @@ from .models import Bayunca, LaVilla, Oldt, Solchacras, Solsantonio, Solhuaqui, 
 
 # Register your models here.
 class BayuncaAdmin(admin.ModelAdmin):
-    fields = ('REG_CA', 'direccion', 'value', 'created_at', 'updated_at')
-    list_display = ('REG_CA', 'direccion', 'value', 'created_at', 'updated_at')
+    fields = ('REG_CA', 'direccion', 'value', 'plant_id', 'created_at', 'updated_at')
+    list_display = ('REG_CA', 'direccion', 'value', 'plant_id', 'created_at', 'updated_at')
     search_fields = ('REG_CA', 'direccion')
     list_filter = ('created_at', 'updated_at')
 admin.site.register(Bayunca, BayuncaAdmin)
@@ -67,8 +67,8 @@ class ProdulestiAdmin(admin.ModelAdmin):
 admin.site.register(Produlesti, ProdulestiAdmin)
 
 class GeneralAdmin(admin.ModelAdmin):
-    fields = ('REG_CA', 'direccion', 'value', 'created_at', 'updated_at')
-    list_display = ('REG_CA', 'direccion', 'value', 'created_at', 'updated_at')
+    fields = ('REG_CA', 'direccion', 'value', 'plant_id', 'created_at', 'updated_at')
+    list_display = ('REG_CA', 'direccion', 'value', 'plant_id', 'created_at', 'updated_at')
     search_fields = ('REG_CA', 'direccion')
     list_filter = ('created_at', 'updated_at')
 admin.site.register(General, GeneralAdmin)

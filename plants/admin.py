@@ -27,6 +27,7 @@ class SignsAdmin(admin.ModelAdmin):
         'max_value',
         'protocolo',
         'metadata',
+        'active'
     )
     list_display = (
         'plant_id',
@@ -41,8 +42,8 @@ class SignsAdmin(admin.ModelAdmin):
         'max_value',
         'protocolo',
         'metadata',
-        'created_at',
-        'updated_at'
+        'active'
+
     )
     search_fields = ('plant_id', 'protocolo')
 
