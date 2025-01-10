@@ -26,7 +26,7 @@ def start_iec104_client(plant_id, plant_name, ip, port, modelo, tick_rate_ms, co
             match modelo:
                 case "Bayunca1":
                     Bayunca.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
-                case "Lavilla":
+                case "LaVilla":
                     LaVilla.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)
                 case "Oldt":
                     Oldt.objects.create(REG_CA=type, value=value, direccion=io_address, plant_id=plant_id)

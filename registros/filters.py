@@ -1,6 +1,8 @@
 import django_filters
 from django.db.models import Avg
 from .models import Bayunca, LaVilla, Oldt, Solchacras, Solsantonio, Solhuaqui, Sanpedro, Gonzaenergy, Produlesti, General
+from django.db.models import F
+from django.db.models.functions import TruncDate
 
 class RegistroFilter(django_filters.FilterSet):
     startDate = django_filters.DateTimeFilter(field_name='created_at', lookup_expr='gte', help_text="Formato: AAAA-MM-DD")
@@ -9,20 +11,24 @@ class RegistroFilter(django_filters.FilterSet):
     direccion = django_filters.NumberFilter(field_name='direccion', help_text="Dirección IOA de IEC104 o no aplica para MODBUS")
     promedio_diario = django_filters.BooleanFilter(method='filtrar_promedio_diario', help_text="True para calcular el promedio diario")
     muestreo = django_filters.NumberFilter(method='filtrar_muestreo', help_text="Especifica el intervalo de muestreo (e.g., 100 para 1 de cada 100 registros)")
-
+    plant_id = django_filters.NumberFilter(field_name='plant_id', help_text="ID de la planta")
     def filtrar_promedio_diario(self, queryset, name, value):
         if value:
-            return queryset.values('created_at__date').annotate(promedio_valor=Avg('REG_CA'))
+            # Agrupación por día usando TruncDate y calculando promedio diario
+            return queryset.exclude(value__isnull=True).annotate(
+                fecha_dia=TruncDate('created_at')
+            ).values('fecha_dia').annotate(promedio_valor=Avg('value'))
         return queryset
+
 
     def filtrar_muestreo(self, queryset, name, value):
         if value > 0:
-            # Seleccionar 1 de cada 'value' registros
-            return queryset.filter(id__mod=value == 0)
+            # Utilizar annotate y filtro basado en el residuo
+            return queryset.annotate(mod_result=F('id') % value).filter(mod_result=0)
         return queryset
 
     class Meta:
-        fields = ['startDate', 'endDate', 'REG_CA', 'direccion', 'promedio_diario', 'muestreo']
+        fields = ['startDate', 'endDate', 'REG_CA', 'direccion', 'promedio_diario', 'muestreo', 'plant_id']
 
 
 # Subclases para cada modelo

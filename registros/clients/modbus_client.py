@@ -35,7 +35,7 @@ def start_modbus_client(plant_id, plant_name, ip, port, start_address, max_regis
             match modelo:
                 case "Bayunca1":
                     Bayunca.objects.create(REG_CA=reg_address, value=value, plant_id=plant_id)
-                case "Lavilla":
+                case "LaVilla":
                     LaVilla.objects.create(REG_CA=reg_address, value=value, plant_id=plant_id)
                 case "Oldt":
                     Oldt.objects.create(REG_CA=reg_address, value=value, plant_id=plant_id)
