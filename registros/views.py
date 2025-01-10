@@ -44,7 +44,7 @@ class BayuncaViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = BayuncaFilter
     ordering_fields = '__all__'
-    ordering = ['created_at']  # Orden predeterminado
+    #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return BayuncaPromedioSerializer
@@ -57,7 +57,7 @@ class LaVillaViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = LaVillaFilter
     ordering_fields = '__all__'
-    ordering = ['created_at']  # Orden predeterminado
+    #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return LaVillaPromedioSerializer
@@ -69,7 +69,7 @@ class OldtViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = OldtFilter
     ordering_fields = '__all__'
-    ordering = ['created_at']  # Orden predeterminado
+    #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return OldtPromedioSerializer
@@ -81,7 +81,7 @@ class SolchacrasViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = SolchacrasFilter
     ordering_fields = '__all__'
-    ordering = ['created_at']  # Orden predeterminado
+    #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return SolchacrasPromedioSerializer
@@ -93,7 +93,7 @@ class SolsantonioViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = SolsantonioFilter
     ordering_fields = '__all__'
-    ordering = ['created_at']  # Orden predeterminado
+    #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return SolsantonioPromedioSerializer
@@ -105,7 +105,7 @@ class SolhuaquiViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = SolhuaquiFilter
     ordering_fields = '__all__'
-    ordering = ['created_at']  # Orden predeterminado
+    #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self): 
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return SolhuaquiPromedioSerializer
@@ -117,7 +117,7 @@ class SanpedroViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = SanpedroFilter
     ordering_fields = '__all__'
-    ordering = ['created_at']  # Orden predeterminado
+    #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return SanpedroPromedioSerializer
@@ -129,7 +129,7 @@ class GonzaenergyViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = GonzaenergyFilter
     ordering_fields = '__all__'
-    ordering = ['created_at']  # Orden predeterminado
+    #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return GonzaenergyPromedioSerializer
@@ -141,7 +141,7 @@ class ProdulestiViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = ProdulestiFilter
     ordering_fields = '__all__'
-    ordering = ['created_at']  # Orden predeterminado
+    #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return ProdulestiPromedioSerializer
@@ -153,7 +153,7 @@ class GeneralViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = GeneralFilter
     ordering_fields = '__all__'
-    ordering = ['created_at']  # Orden predeterminado
+    #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return GeneralPromedioSerializer

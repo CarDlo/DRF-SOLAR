@@ -418,91 +418,165 @@ Esta API utiliza dos técnicas fundamentales para la optimización del manejo de
 
 - **Promedio Diario(Agregación):** Calcula el promedio de un valor (`REG_CA`) agrupado por día. Esto ayuda a analizar tendencias sin necesidad de procesar cada registro individual, ideal para reportes de rendimiento o monitoreo de datos.
 
-## URL Base
-```
-GET /api/lavilla/
-```
+## API de Ejemplo: Bayunca
 
-## Parámetros Disponibles
-
-### 1. `startDate` (opcional)
-- **Descripción:** Filtra registros desde esta fecha.
-- **Formato:** `AAAA-MM-DD`
-- **Ejemplo:** `?startDate=2024-01-01`
-
-### 2. `endDate` (opcional)
-- **Descripción:** Filtra registros hasta esta fecha.
-- **Formato:** `AAAA-MM-DD`
-- **Ejemplo:** `?endDate=2024-01-31`
-
-### 3. `REG_CA` (opcional)
-- **Descripción:** Filtra registros con un código específico MODBUS o dirección común IEC104.
-- **Formato:** Número entero.
-- **Ejemplo:** `?REG_CA=100`
-
-### 4. `direccion` (opcional)
-- **Descripción:** Filtra registros por la dirección IOA de IEC104.
-- **Formato:** Número entero.
-- **Ejemplo:** `?direccion=50`
-
-### 5. `promedio_diario` (opcional)
-- **Descripción:** Calcula el promedio diario de los registros.
-- **Formato:** Booleano (`True` o `False`)
-- **Ejemplo:** `?promedio_diario=True`
-
-### 6. `muestreo` (opcional)
-- **Descripción:** Devuelve 1 de cada `n` registros.
-- **Formato:** Número entero positivo.
-- **Ejemplo:** `?muestreo=100` (devuelve 1 de cada 100 registros)
+Esta es la documentación de la API de **Bayunca**, que permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre registros de datos de medición para plantas solares.
 
 ---
 
-## Ejemplos de Uso
+### 📌 Endpoints Disponibles
 
-### 1. **Obtener registros filtrados por fecha:**
-Este ejemplo devuelve los registros que fueron creados entre el 1 y el 31 de enero de 2024.
+#### 1. Listar Registros (GET)
+**Endpoint:**
+```plaintext
+GET /api/bayunca/
 ```
-GET /api/lavilla/?startDate=2024-01-01&endDate=2024-01-31
-```
+**Descripción:** Recupera una lista paginada de registros. Se pueden aplicar filtros y ordenamientos.
 
-### 2. **Obtener promedio diario:**
-Este ejemplo devuelve el promedio diario de los valores `REG_CA` registrados.
-```
-GET /api/lavilla/?promedio_diario=True
-```
+**Parámetros de Consulta:**
+| **Parámetro**      | **Descripción**                                  |
+| -----------------  | ------------------------------------------------|
+| `page`             | Número de página dentro del conjunto paginado. |
+| `startDate`        | Fecha de inicio en formato `AAAA-MM-DD`.       |
+| `endDate`          | Fecha de fin en formato `AAAA-MM-DD`.          |
+| `REG_CA`           | Código de Registro MODBUS o Dirección Común IEC104. |
+| `direccion`        | Dirección IOA de IEC104 (no se usa en MODBUS). |
+| `promedio_diario`  | `True` para calcular el promedio diario.        |
+| `muestreo`         | Intervalo de muestreo (ej. `100` para 1 de cada 100 registros). |
+| `plant_id`         | Identificador de la planta.                    |
+| `ordering`         | Campo para ordenar resultados. Ej: `created_at`.|
 
-### 3. **Obtener registros con muestreo de 1 cada 100 registros:**
-Este ejemplo devuelve 1 registro de cada 100.
-```
-GET /api/lavilla/?muestreo=100
-```
+**Ejemplos de Uso:**
+- **Filtrar por rango de fechas:**
+  ```bash
+  curl "http://localhost:8000/api/bayunca/?startDate=2025-01-01&endDate=2025-01-10"
+  ```
+- **Filtrar por planta y ordenar:**
+  ```bash
+  curl "http://localhost:8000/api/bayunca/?plant_id=2&ordering=-created_at"
+  ```
+- **Filtrar por muestreo (1 de cada 800 registros):**
+  ```bash
+  curl "http://localhost:8000/api/bayunca/?muestreo=800"
+  ```
+- **Combinación de filtros (fechas, planta, muestreo):**
+  ```bash
+  curl "http://localhost:8000/api/bayunca/?startDate=2025-01-01&endDate=2025-01-10&plant_id=2&muestreo=100"
+  ```
 
-### 4. **Filtrar por `REG_CA` y aplicar muestreo:**
-Devuelve solo registros con un `REG_CA` igual a 120, aplicando un muestreo de 1 cada 50 registros.
-```
-GET /api/lavilla/?REG_CA=120&muestreo=50
-```
-
-### 5. **Combinar múltiples filtros: promedio diario y rango de fechas:**
-Este ejemplo devuelve el promedio diario de `REG_CA` entre el 1 y el 15 de enero de 2024.
-```
-GET /api/lavilla/?startDate=2024-01-01&endDate=2024-01-15&promedio_diario=True
-```
-
-### 6. **Filtrar por rango de fechas, muestreo y código `REG_CA`:**
-Este ejemplo devuelve 1 de cada 50 registros con `REG_CA=120` en el rango de fechas del 1 al 15 de enero de 2024.
-```
-GET /api/lavilla/?startDate=2024-01-01&endDate=2024-01-15&muestreo=50&REG_CA=120
+**Ejemplo de Respuesta:**
+```json
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 800,
+      "REG_CA": 109,
+      "value": 21488,
+      "direccion": null,
+      "metadata": null,
+      "created_at": "2025-01-06T13:21:50.178923Z",
+      "updated_at": "2025-01-06T13:21:50.178923Z",
+      "plant_id": 2
+    },
+    {
+      "id": 1600,
+      "REG_CA": 34,
+      "value": 0,
+      "direccion": null,
+      "metadata": null,
+      "created_at": "2025-01-06T13:23:03.888408Z",
+      "updated_at": "2025-01-06T13:23:03.888408Z",
+      "plant_id": 2
+    }
+  ]
+}
 ```
 
 ---
 
-## Notas Importantes
-- **Filtrado Combinado:** Se pueden combinar varios filtros para obtener resultados más específicos.  
-- **Optimización:** Se recomienda usar `promedio_diario` o `muestreo` para grandes volúmenes de datos.
+#### 2. Crear un Registro (POST)
+**Endpoint:**
+```plaintext
+POST /api/bayunca/
+```
+**Descripción:** Permite crear un nuevo registro de medición.
+
+**Cuerpo de la Solicitud:**
+```json
+{
+  "REG_CA": 1234,
+  "value": 45.6,
+  "direccion": 1,
+  "metadata": {"sensor": "A1"},
+  "plant_id": 1
+}
+```
 
 ---
 
-## Contacto
-Para dudas o soporte, contactar al equipo de desarrollo.
+#### 3. Obtener un Registro Específico (GET)
+**Endpoint:**
+```plaintext
+GET /api/bayunca/{id}/
+```
+**Descripción:** Recupera un registro específico basado en su `id`.
+
+**Ejemplo de Uso:**
+```bash
+curl "http://localhost:8000/api/bayunca/1/"
+```
+
+---
+
+#### 4. Obtener Promedio Diario (GET con `promedio_diario`)
+**Endpoint:**
+```plaintext
+GET /api/bayunca/?promedio_diario=True
+```
+**Ejemplo de Respuesta:**
+```json
+{
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "fecha_dia": "2025-01-04",
+      "promedio_valor": 150
+    }
+  ]
+}
+```
+
+---
+
+#### 5. Actualizar un Registro (PUT)
+**Endpoint:**
+```plaintext
+PUT /api/bayunca/{id}/
+```
+**Descripción:** Actualiza completamente un registro existente.
+
+**Cuerpo de la Solicitud:**
+```json
+{
+  "REG_CA": 1234,
+  "value": 50.1,
+  "direccion": 2,
+  "metadata": {"sensor": "B2"},
+  "plant_id": 1
+}
+```
+
+---
+
+### 📌 **Notas Importantes:**
+- El parámetro `page` controla la paginación.  
+- El campo `ordering` permite ordenar resultados por cualquier campo permitido, usando `-` para orden descendente.  
+- El valor de `REG_CA` y `value` es **obligatorio** para crear un nuevo registro.
+---
+
 

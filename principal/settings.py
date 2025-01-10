@@ -175,9 +175,9 @@ REST_FRAMEWORK = {
 
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
-        'rest_framework.filters.OrderingFilter'  # Asegúrate de que esté habilitado aquí
+        #'rest_framework.filters.OrderingFilter'  # Asegúrate de que esté habilitado aquí
     ],
-    'ORDERING_PARAM': 'ordering',
+    #'ORDERING_PARAM': 'ordering',
 
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 2000,  # Número de registros por página

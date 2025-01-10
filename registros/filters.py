@@ -12,6 +12,7 @@ class RegistroFilter(django_filters.FilterSet):
     promedio_diario = django_filters.BooleanFilter(method='filtrar_promedio_diario', help_text="True para calcular el promedio diario")
     muestreo = django_filters.NumberFilter(method='filtrar_muestreo', help_text="Especifica el intervalo de muestreo (e.g., 100 para 1 de cada 100 registros)")
     plant_id = django_filters.NumberFilter(field_name='plant_id', help_text="ID de la planta")
+    
     def filtrar_promedio_diario(self, queryset, name, value):
         if value:
             # Agrupación por día usando TruncDate y calculando promedio diario
@@ -19,6 +20,7 @@ class RegistroFilter(django_filters.FilterSet):
                 fecha_dia=TruncDate('created_at')
             ).values('fecha_dia').annotate(promedio_valor=Avg('value'))
         return queryset
+
 
 
     def filtrar_muestreo(self, queryset, name, value):
