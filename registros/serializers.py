@@ -125,3 +125,7 @@ class GeneralPromedioSerializer(serializers.Serializer):
     class Meta(RegistroSerializer.Meta):
         model = General
         fields = '__all__'
+
+class ClientControlSerializer(serializers.Serializer):
+    message = serializers.CharField(help_text="Mensaje informativo sobre el resultado de la operación.")
+    success = serializers.BooleanField(help_text="Indica si la operación fue exitosa.")

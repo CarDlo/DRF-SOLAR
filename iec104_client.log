@@ -2967,3 +2967,47 @@ AttributeError: 'NoneType' object has no attribute 'query_params'
 2025-01-10 08:49:41,314 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.
 2025-01-10 09:07:50,551 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.
 2025-01-10 09:10:32,060 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.
+2025-01-10 11:57:02,445 - Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-01-10 11:57:02,616 - Bad Request: /docs/
+2025-01-10 11:58:05,614 - Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'localhost:8000'. You may need to add 'localhost' to ALLOWED_HOSTS.
+2025-01-10 11:58:05,652 - Bad Request: /api/docs
+2025-01-10 11:58:32,536 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.
+2025-01-10 11:58:45,810 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.
+2025-01-10 12:06:16,389 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.
+2025-01-10 12:09:49,965 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\plants\api.py changed, reloading.
+2025-01-10 12:12:26,819 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-10 12:12:45,485 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-10 12:14:21,405 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.
+2025-01-10 12:16:19,188 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-10 12:27:26,988 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\serializers.py changed, reloading.
+2025-01-10 12:28:41,308 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-10 12:32:26,383 - Connection to (127.0.0.1, 502) failed: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-01-10 12:32:26,384 - No se pudo conectar al dispositivo Modbus en 127.0.0.1:502
+2025-01-10 12:35:49,030 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.
+2025-01-10 12:38:27,253 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\principal\settings.py changed, reloading.

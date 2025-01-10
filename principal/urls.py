@@ -20,6 +20,7 @@ from django.urls.conf import include
 from rest_framework.documentation import include_docs_urls
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework.permissions import AllowAny
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +31,15 @@ urlpatterns = [
     #JWT
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),    
+
+    #DRF_SPECTACULAR
+
+     # Genera el esquema OpenAPI en formato JSON
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    
+    # Interfaz Swagger para visualizar y probar la API
+    path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+
+    # Interfaz alternativa Redoc (más minimalista)
+    path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]

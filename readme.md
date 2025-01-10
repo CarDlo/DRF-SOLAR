@@ -96,7 +96,7 @@ Carga un conjunto de datos predefinido desde un archivo JSON en la base de datos
 
 9. **Cargar datos de las señales**
 ```bash
-python manage.py loaddata psignals_export.json
+python manage.py loaddata signals_export.json
 ```
 Carga un conjunto de datos predefinido desde un archivo JSON en la base de datos. Este archivo contiene información sobre las señales disponibles para ser utilizadas en la planta La villa.
 

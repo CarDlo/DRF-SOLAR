@@ -48,7 +48,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost:8000','web-production-79a9.up.railway.app']
+ALLOWED_HOSTS = ['localhost','web-production-79a9.up.railway.app']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -62,8 +62,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
-    'plants',
     'rest_framework',
+    'drf_spectacular',
+    'plants',
     'coreapi',
     'django_filters',
     'registros',
@@ -176,7 +177,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    #"DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
 
     #SIMPLEJWT
     'DEFAULT_PERMISSION_CLASSES': (
@@ -212,4 +214,23 @@ STORAGES = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'https://web-production-79a9.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.railway.app']
+
+# Configuración para un panel más avanzado
+# settings.py
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'API Solar Management',
+    'DESCRIPTION': 'Panel de documentación con Sidebar',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,  
+    'SWAGGER_UI_SETTINGS': {
+        'deepLinking': True,
+        'persistAuthorization': True,
+        'displayRequestDuration': True,
+        'defaultModelsExpandDepth': 1,  
+        'defaultModelRendering': 'example',  
+        'filter': True,  
+        'tagsSorter': 'alpha',  
+        'operationsSorter': 'alpha'  
+    }
+}

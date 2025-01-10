@@ -1,12 +1,15 @@
 from plants.models import Plant, Signs
 from rest_framework import viewsets
 from .serializers import PlantSerializer, SignalSerializer
+from drf_spectacular.utils import extend_schema
 
+@extend_schema(tags=["Plantas"])
 class PlantViewSet(viewsets.ModelViewSet):
 
     queryset = Plant.objects.all()
     serializer_class = PlantSerializer
 
+@extend_schema(tags=["Señales"])
 class SignalViewSet(viewsets.ModelViewSet):
 
     queryset = Signs.objects.all()
