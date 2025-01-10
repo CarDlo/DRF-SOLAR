@@ -201,3 +201,5 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+CRF_TRUSTED_ORIGINS = ['https://web-production-79a9.up.railway.app']
