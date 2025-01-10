@@ -14,6 +14,7 @@ from pathlib import Path
 from datetime import timedelta # import this library top of the settings.py file
 from dotenv import load_dotenv
 import os
+import dj_database_url
 # Load environment variables from .env file
 load_dotenv()
 
@@ -26,6 +27,9 @@ DATABASE_USER = os.getenv('DATABASE_USER')
 DATABASE_PASS = os.getenv('DATABASE_PASS')
 DATABASE_HOST = os.getenv('DATABASE_HOST')
 DATABASE_PORT = os.getenv('DATABASE_PORT')
+
+# Database URL
+#DATABASE_URL = os.getenv('DATABASE_URL')
 
 
 
@@ -44,7 +48,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','web-production-79a9.up.railway.app']
+ALLOWED_HOSTS = ['localhost:8000','https://web-production-79a9.up.railway.app/']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -103,25 +107,31 @@ WSGI_APPLICATION = 'principal.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 # Configuración de la base de datos según la variable de entorno
-if DATABASE_TYPE == 'postgresql':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('DATABASE_NAME', 'mydatabase'),  # Nombre de la base de datos
-            'USER': os.getenv('DATABASE_USER', 'mydatabaseuser'),  # Usuario
-            'PASSWORD': os.getenv('DATABASE_PASS', 'mypassword'),  # Contraseña
-            'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),  # Host
-            'PORT': os.getenv('DATABASE_PORT', '5432'),  # Puerto
-        }
-    }
-else:
-    # Configuración por defecto (SQLite)
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+# if DATABASE_TYPE == 'postgresql':
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': os.getenv('DATABASE_NAME', 'mydatabase'),  # Nombre de la base de datos
+#             'USER': os.getenv('DATABASE_USER', 'mydatabaseuser'),  # Usuario
+#             'PASSWORD': os.getenv('DATABASE_PASS', 'mypassword'),  # Contraseña
+#             'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),  # Host
+#             'PORT': os.getenv('DATABASE_PORT', '5432'),  # Puerto
+#         }
+#     }
+# else:
+#     # Configuración por defecto (SQLite)
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+
+
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+}
+
 
 
 # Password validation
@@ -202,4 +212,4 @@ STORAGES = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-79a9.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'https://web-production-79a9.up.railway.app']
