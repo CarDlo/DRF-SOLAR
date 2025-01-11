@@ -4,12 +4,22 @@ import multiprocessing
 import signal
 import time
 import psutil
+import logging
 import os
 import json
 from .fetch_plants_service import fetch_plants
 from registros.clients.iec104_client import start_iec104_client
 from registros.clients.modbus_client import start_modbus_client
 from registros.clients.modbus_client_rev import start_modbus_client_rev
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.StreamHandler(),  # Envía los logs al stdout visible en Railway
+        logging.FileHandler("modbus_client.log")  # Guarda también en un archivo local
+    ]
+)
 
 # Archivos de bloqueo y estado
 LOCK_FILE = "plants.lock"
@@ -138,15 +148,22 @@ def stop_client(plant_name):
     active_plants = load_active_plants()
     process_state = load_process_state()
 
-    pid = process_state.get(plant_name)
-    if not pid:
+    # Verificar si el proceso fue guardado como objeto en lugar de solo PID
+    process = process_state.get(plant_name)
+    if not process:
         return {"status": "error", "message": f"No hay cliente activo para la planta: {plant_name}"}
 
     try:
-        os.kill(pid, signal.SIGTERM)
+        # Utilizar terminate() directamente desde el objeto de proceso
+        if isinstance(process, int):  
+            os.kill(process, signal.SIGTERM)  # Si solo se guarda el PID
+        else:
+            process.terminate()  # Si se guarda el objeto completo del proceso
+            process.join()  # Esperar a que el proceso finalice
     except OSError as e:
         return {"status": "error", "message": f"Error al detener el cliente {plant_name}: {e}"}
 
+    # Actualizar el estado
     process_state.pop(plant_name, None)
     save_process_state(process_state)
 
@@ -155,7 +172,6 @@ def stop_client(plant_name):
         save_active_plants(active_plants)
 
     return {"status": "success", "message": f"Cliente para {plant_name} detenido correctamente."}
-
 def restart_client(plant_name):
     """
     Reinicia un cliente para una planta específica.
