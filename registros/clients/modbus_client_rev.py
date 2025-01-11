@@ -18,6 +18,7 @@ def start_modbus_client_rev(plant_id, plant_name, ip, port, start_address, max_r
             try:
                 
                 record = Signs.objects.filter(reg_ca=reg_address).first()
+                print(f"Verificando si el registro {reg_address} está activo.")
                 if record and record.active:
                     print(f"Registro {reg_address} activo.")
                     return True
@@ -30,7 +31,7 @@ def start_modbus_client_rev(plant_id, plant_name, ip, port, start_address, max_r
         def send_data_to_api(value, reg_address):
             if verification_data(reg_address):
                 try:
-                    connection.close()
+
                     print(f"Guardando en {modelo}: REG_CA={reg_address}, Valor={value}")
                     if modelo == "Bayunca1":
                         Bayunca.objects.create(REG_CA=reg_address, value=value, plant_id=plant_id)
