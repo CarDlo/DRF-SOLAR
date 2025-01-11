@@ -12,6 +12,7 @@ logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format='%(asctime)s -
 
 def start_modbus_client_rev(plant_id, plant_name, ip, port, start_address, max_registers, interval, total_registers, modelo):
   
+
     print(f"Configuración MODBUS, desde el cliente:plant_name={plant_name}, ip={ip}, port={port}, start_address={start_address}, max_registers={max_registers}, interval={interval}")
     """
     Inicia el cliente Modbus TCP y envía datos a una API en intervalos definidos.
@@ -110,9 +111,13 @@ def start_modbus_client_rev(plant_id, plant_name, ip, port, start_address, max_r
             logging.error(f"Error inesperado: {e}")
 
     def main_loop(plant_name, host, port, start_address, max_registers, interval, total_registers):
+        
+        connection.close()
+        connection.ensure_connection()
+        
         """
         Mantiene la conexión al dispositivo Modbus y realiza lecturas periódicas.
-
+        
         :param host: Dirección IP del dispositivo Modbus.
         :param port: Puerto TCP del dispositivo Modbus.
         :param start_address: Dirección inicial de lectura.

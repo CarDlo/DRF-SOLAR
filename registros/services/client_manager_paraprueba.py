@@ -4,12 +4,22 @@ import multiprocessing
 import signal
 import time
 import psutil
+import logging
 import os
 import json
 from .fetch_plants_service import fetch_plants
 from registros.clients.iec104_client import start_iec104_client
 from registros.clients.modbus_client import start_modbus_client
 from registros.clients.modbus_client_rev import start_modbus_client_rev
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.StreamHandler(),  # Envía los logs al stdout visible en Railway
+        logging.FileHandler("modbus_client.log")  # Guarda también en un archivo local
+    ]
+)
 
 # Archivos de bloqueo y estado
 LOCK_FILE = "plants.lock"
@@ -105,29 +115,45 @@ def start_client(plant_name):
     """
     Inicia un cliente para una planta específica.
     """
-    cleanup_orphan_processes()
-    active_plants = load_active_plants()
-    process_state = load_process_state()
+    try:
+        print(f"Intentando iniciar cliente para la planta: {plant_name}")
+        cleanup_orphan_processes()
+        active_plants = load_active_plants()
+        process_state = load_process_state()
 
-    if plant_name in process_state:
-        return {"status": "error", "message": f"La planta {plant_name} ya está en ejecución."}
+        if plant_name in process_state:
+            print(f"La planta {plant_name} ya está en ejecución.")
+            return {"status": "error", "message": f"La planta {plant_name} ya está en ejecución."}
 
-    plants = fetch_plants()
-    plant = next((p for p in plants if p.name == plant_name), None)
+        plants = fetch_plants()
+        plant = next((p for p in plants if p.name == plant_name), None)
 
-    if not plant:
-        return {"status": "error", "message": f"Planta {plant_name} no encontrada."}
+        if not plant:
+            print(f"Planta {plant_name} no encontrada.")
+            return {"status": "error", "message": f"Planta {plant_name} no encontrada."}
 
-    process = multiprocessing.Process(target=handle_plant, args=(plant,))
-    process.start()
+        print(f"Creando proceso para la planta: {plant_name}")
+        process = multiprocessing.Process(target=handle_plant, args=(plant,))
+        process.start()
+        print(f"Proceso creado con PID: {process.pid}")
 
-    process_state[plant_name] = process.pid
-    save_process_state(process_state)
+        process_state[plant_name] = process.pid
+        save_process_state(process_state)
 
-    active_plants.add(plant_name)
-    save_active_plants(active_plants)
+        active_plants.add(plant_name)
+        save_active_plants(active_plants)
 
-    return {"status": "success", "message": f"Cliente iniciado para la planta: {plant_name}", "pid": process.pid}
+        print(f"Cliente iniciado correctamente para la planta: {plant_name} con PID: {process.pid}")
+        return {"status": "success", "message": f"Cliente iniciado para la planta: {plant_name}", "pid": process.pid}
+
+    except Exception as e:
+        print(f"Error al iniciar el cliente para la planta {plant_name}: {e}")
+        return {"status": "error", "message": f"Error inesperado: {str(e)}"}
+
+
+    except Exception as e:
+        logging.exception(f"Error al iniciar el cliente para la planta {plant_name}: {e}")
+        return {"status": "error", "message": f"Error inesperado: {str(e)}"}
 
 def stop_client(plant_name):
     """
