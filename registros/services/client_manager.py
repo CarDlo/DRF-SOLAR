@@ -116,26 +116,26 @@ def start_client(plant_name):
     Inicia un cliente para una planta específica.
     """
     try:
-        logging.info(f"Intentando iniciar cliente para la planta: {plant_name}")
+        print(f"Intentando iniciar cliente para la planta: {plant_name}")
         cleanup_orphan_processes()
         active_plants = load_active_plants()
         process_state = load_process_state()
 
         if plant_name in process_state:
-            logging.warning(f"La planta {plant_name} ya está en ejecución.")
+            print(f"La planta {plant_name} ya está en ejecución.")
             return {"status": "error", "message": f"La planta {plant_name} ya está en ejecución."}
 
         plants = fetch_plants()
         plant = next((p for p in plants if p.name == plant_name), None)
 
         if not plant:
-            logging.error(f"Planta {plant_name} no encontrada.")
+            print(f"Planta {plant_name} no encontrada.")
             return {"status": "error", "message": f"Planta {plant_name} no encontrada."}
 
-        logging.info(f"Creando proceso para la planta: {plant_name}")
+        print(f"Creando proceso para la planta: {plant_name}")
         process = multiprocessing.Process(target=handle_plant, args=(plant,))
         process.start()
-        logging.info(f"Proceso creado con PID: {process.pid}")
+        print(f"Proceso creado con PID: {process.pid}")
 
         process_state[plant_name] = process.pid
         save_process_state(process_state)
@@ -143,8 +143,13 @@ def start_client(plant_name):
         active_plants.add(plant_name)
         save_active_plants(active_plants)
 
-        logging.info(f"Cliente iniciado correctamente para la planta: {plant_name} con PID: {process.pid}")
+        print(f"Cliente iniciado correctamente para la planta: {plant_name} con PID: {process.pid}")
         return {"status": "success", "message": f"Cliente iniciado para la planta: {plant_name}", "pid": process.pid}
+
+    except Exception as e:
+        print(f"Error al iniciar el cliente para la planta {plant_name}: {e}")
+        return {"status": "error", "message": f"Error inesperado: {str(e)}"}
+
 
     except Exception as e:
         logging.exception(f"Error al iniciar el cliente para la planta {plant_name}: {e}")
