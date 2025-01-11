@@ -16,22 +16,22 @@ def start_modbus_client_rev(plant_id, plant_name, ip, port, start_address, max_r
     try:
         def verification_data(reg_address):
             try:
-                
-                record = Signs.objects.filter(reg_ca=reg_address).first()
+                connection.ensure_connection()  # Asegura la conexión
                 print(f"Verificando si el registro {reg_address} está activo.")
+                record = Signs.objects.filter(reg_ca=reg_address).first()
                 if record and record.active:
                     print(f"Registro {reg_address} activo.")
                     return True
-                
+                print(f"Registro {reg_address} no activo o no encontrado.")
                 return False
             except Exception as e:
                 print(f"Error al verificar el registro {reg_address}: {e}")
                 return False
 
         def send_data_to_api(value, reg_address):
-            if verification_data(reg_address):
-                try:
-
+            try:
+                connection.ensure_connection()  # Asegura la conexión
+                if verification_data(reg_address):
                     print(f"Guardando en {modelo}: REG_CA={reg_address}, Valor={value}")
                     if modelo == "Bayunca1":
                         Bayunca.objects.create(REG_CA=reg_address, value=value, plant_id=plant_id)
@@ -55,11 +55,11 @@ def start_modbus_client_rev(plant_id, plant_name, ip, port, start_address, max_r
                         General.objects.create(REG_CA=reg_address, value=value, plant_id=plant_id)
                     print(f"Datos guardados exitosamente en {modelo} para REG_CA: {reg_address}")
                     return True
-                except Exception as e:
-                    print(f"Error al guardar en la base de datos: {e}")
+                else:
+                    print(f"El registro {reg_address} no está activo, no se guardaron datos.")
                     return False
-            else:
-                print(f"El registro {reg_address} no está activo, no se guardaron datos.")
+            except Exception as e:
+                print(f"Error al guardar en la base de datos: {e}")
                 return False
 
         def read_modbus_registers(client, start_address, max_registers):
