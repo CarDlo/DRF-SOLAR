@@ -16,8 +16,11 @@ def start_modbus_client_rev(plant_id, plant_name, ip, port, start_address, max_r
     try:
         def verification_data(reg_address):
             try:
-                connection.ensure_connection()  # Asegura la conexión
+                # Forzar la reapertura de la conexión antes de cada consulta
+                connection.close()  
+                connection.ensure_connection()
                 print(f"Verificando si el registro {reg_address} está activo.")
+                print(f"Buscando registro {reg_address} en la tabla Signs.")
                 record = Signs.objects.filter(reg_ca=reg_address).first()
                 print(f"Registro encontrado: {record.reg_ca} - Activo: {record.active} - Plant ID: {record.plant_id}")
                 if record and record.active:
