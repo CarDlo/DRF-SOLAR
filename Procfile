@@ -1,1 +1,1 @@
-web: python manage.py collectstatic && gunicorn principal.wsgipi
+web: python manage.py collectstatic --noinput && gunicorn --preload --workers 4 --bind 0.0.0.0:8000 principal.wsgi:application
