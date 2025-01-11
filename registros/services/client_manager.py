@@ -240,7 +240,8 @@ def cleanup_orphan_processes():
 
 if __name__ == "__main__":
     import sys
-
+    # Establecer el modo de inicio 'spawn' para evitar problemas en producción (Railway)
+    multiprocessing.set_start_method("spawn")
     cleanup_orphan_processes()
     if len(sys.argv) < 2:
         print(json.dumps({"status": "error", "message": "Uso: main.py [start|stop|restart|status|start-all|stop-all|restart-all] [plant_name]"}))
