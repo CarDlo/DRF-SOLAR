@@ -4,6 +4,7 @@ from pymodbus.exceptions import ModbusException
 import time
 from registros.models import Bayunca, LaVilla, Oldt, Solchacras, Solsantonio, Solhuaqui, Sanpedro, Gonzaenergy, Produlesti, General
 from plants.models import Signs
+from django.db import connection
 # Configuración del logging
 LOG_FILE = "modbus_client.log"
 logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -54,6 +55,7 @@ def start_modbus_client_rev(plant_id, plant_name, ip, port, start_address, max_r
         if verification_data(reg_address):
 
             try:
+                connection.close()
                 match modelo:
                     case "Bayunca1":
                         Bayunca.objects.create(REG_CA=reg_address, value=value, plant_id=plant_id)
