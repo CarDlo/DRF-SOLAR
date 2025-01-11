@@ -139,6 +139,34 @@ def start_client(plant_name):
 
     return {"status": "success", "message": f"Cliente iniciado para la planta: {plant_name}", "pid": process.pid}
 
+# def stop_client(plant_name):
+#     """
+#     Detiene un cliente para una planta específica.
+#     """
+#     cleanup_orphan_processes()
+
+#     active_plants = load_active_plants()
+#     process_state = load_process_state()
+
+#     pid = process_state.get(plant_name)
+#     if not pid:
+#         return {"status": "error", "message": f"No hay cliente activo para la planta: {plant_name}"}
+
+#     try:
+#         os.kill(pid, signal.SIGTERM)
+#     except OSError as e:
+#         return {"status": "error", "message": f"Error al detener el cliente {plant_name}: {e}"}
+
+#     process_state.pop(plant_name, None)
+#     save_process_state(process_state)
+
+#     if plant_name in active_plants:
+#         active_plants.remove(plant_name)
+#         save_active_plants(active_plants)
+
+#     return {"status": "success", "message": f"Cliente para {plant_name} detenido correctamente."}
+##########################################
+
 def stop_client(plant_name):
     """
     Detiene un cliente para una planta específica.
@@ -148,22 +176,27 @@ def stop_client(plant_name):
     active_plants = load_active_plants()
     process_state = load_process_state()
 
-    # Verificar si el proceso fue guardado como objeto en lugar de solo PID
-    process = process_state.get(plant_name)
-    if not process:
+    pid = process_state.get(plant_name)
+    if not pid:
         return {"status": "error", "message": f"No hay cliente activo para la planta: {plant_name}"}
 
+    # Validar si el PID sigue activo
+    if not os.path.exists(f"/proc/{pid}"):
+        return {"status": "error", "message": f"El proceso con PID {pid} ya no está activo."}
+
     try:
-        # Utilizar terminate() directamente desde el objeto de proceso
-        if isinstance(process, int):  
-            os.kill(process, signal.SIGTERM)  # Si solo se guarda el PID
-        else:
-            process.terminate()  # Si se guarda el objeto completo del proceso
-            process.join()  # Esperar a que el proceso finalice
+        # Enviar señal de terminación
+        os.kill(pid, signal.SIGTERM)
+        time.sleep(1)  # Espera para permitir la terminación limpia
+
+        # Revisar si el proceso sigue activo después de SIGTERM
+        if os.path.exists(f"/proc/{pid}"):
+            os.kill(pid, signal.SIGKILL)
+
     except OSError as e:
         return {"status": "error", "message": f"Error al detener el cliente {plant_name}: {e}"}
 
-    # Actualizar el estado
+    # Actualizar los estados después de la terminación
     process_state.pop(plant_name, None)
     save_process_state(process_state)
 
@@ -172,6 +205,9 @@ def stop_client(plant_name):
         save_active_plants(active_plants)
 
     return {"status": "success", "message": f"Cliente para {plant_name} detenido correctamente."}
+
+
+###########################################
 def restart_client(plant_name):
     """
     Reinicia un cliente para una planta específica.
