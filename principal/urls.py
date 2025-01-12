@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
-from rest_framework.documentation import include_docs_urls
+from rest_framework.documentation import include_docs_urls, get_schema_view
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework.permissions import AllowAny
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('plants.urls')),
     path('docs/', include_docs_urls(title='Documentacion API', permission_classes=[AllowAny])),
+    path('schema/', get_schema_view(title="Esquema CoreAPI")),
     path('api/', include('registros.urls')),
 
     #JWT

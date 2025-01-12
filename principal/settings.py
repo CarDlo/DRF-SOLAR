@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'django_filters',
     'registros',
     'rest_framework_simplejwt',
+    'corsheaders',
 
 ]
 
@@ -77,6 +78,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -216,5 +218,6 @@ STORAGES = {
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.railway.app']
 
+CORS_ALLOWED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.railway.app']
 # Configuración para un panel más avanzado
 # settings.py
