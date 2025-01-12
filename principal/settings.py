@@ -14,7 +14,6 @@ from pathlib import Path
 from datetime import timedelta # import this library top of the settings.py file
 from dotenv import load_dotenv
 import os
-from env import SECRET_KEY, DEBUG, ALLOWED_HOSTS, DATABASE_URL
 import dj_database_url
 # Load environment variables from .env file
 #load_dotenv()
@@ -36,13 +35,13 @@ RAILWAY_PROJECT_NAME = os.getenv('RAILWAY_PROJECT_NAME')
 # Database URL
 #DATABASE_URL = os.getenv('DATABASE_URL')
 
-#SECRET_KEY = 'django-insecure-ye@4^j!ro*8+*cjf&=9)172w*uak!_$#-_if63pgm^e=w=u%#6'
-#DATABASE_URL='postgresql://postgres:csnUArptScAVIsYTPcknoadnxXGThxzv@viaduct.proxy.rlwy.net:51580/railway'
+SECRET_KEY = 'django-insecure-ye@4^j!ro*8+*cjf&=9)172w*uak!_$#-_if63pgm^e=w=u%#6'
+DATABASE_URL='postgresql://postgres:csnUArptScAVIsYTPcknoadnxXGThxzv@viaduct.proxy.rlwy.net:51580/railway'
 
 
 # Diagnóstico para ver si Railway está leyendo las variables
-print("CARDLO SECRET_KEY:", SECRET_KEY)
-print("CARDLO DATABASE_URL:", DATABASE_URL)
+print("CARDLO SECRET_KEY:", os.getenv('SECRET_KEY'))
+print("CARDLO DATABASE_URL:", os.getenv('DATABASE_URL'))
 print("RAILWAY_PROJECT_NAME:", os.getenv('RAILWAY_PROJECT_NAME'))
 
 
