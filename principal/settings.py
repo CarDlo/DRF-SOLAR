@@ -29,6 +29,7 @@ DATABASE_USER = os.getenv('DATABASE_USER')
 DATABASE_PASS = os.getenv('DATABASE_PASS')
 DATABASE_HOST = os.getenv('DATABASE_HOST')
 DATABASE_PORT = os.getenv('DATABASE_PORT')
+RAILWAY_PROJECT_NAME = os.getenv('RAILWAY_PROJECT_NAME')
 
 
 # Database URL
@@ -37,7 +38,7 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 # Diagnóstico para ver si Railway está leyendo las variables
 print("CARDLO SECRET_KEY:", os.getenv('SECRET_KEY'))
 print("CARDLO DATABASE_URL:", os.getenv('DATABASE_URL'))
-
+print("RAILWAY_PROJECT_NAME:", os.getenv('RAILWAY_PROJECT_NAME'))
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
