@@ -3896,3 +3896,169 @@ Traceback (most recent call last):
 KeyError: "Got KeyError when attempting to get a value for field `promedio_diario` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'promedio_diario'."
 2025-01-11 19:33:47,701 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
 2025-01-11 21:24:05,014 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.
+2025-01-11 21:31:02,689 - Internal Server Error: /schema/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\schemas\views.py", line 48, in handle_exception
+    return super().handle_exception(exc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\schemas\views.py", line 37, in get
+    schema = self.schema_generator.get_schema(request, self.public)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\schemas\openapi.py", line 80, in get_schema
+    operation = view.schema.get_operation(path, method)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AutoSchema.get_operation() missing 3 required positional arguments: 'path_prefix', 'method', and 'registry'
+2025-01-11 21:31:02,840 - Not Found: /favicon.ico
+2025-01-11 21:31:36,277 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\generics.py", line 154, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django_filters\rest_framework\backends.py", line 72, in filter_queryset
+    if not filterset.is_valid() and self.raise_exception:
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django_filters\filterset.py", line 211, in is_valid
+    return self.is_bound and self.form.is_valid()
+                             ^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django_filters\filterset.py", line 266, in form
+    Form = self.get_form_class()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django_filters\filterset.py", line 258, in get_form_class
+    [(name, filter_.field) for name, filter_ in self.filters.items()]
+            ^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django_filters\filters.py", line 158, in field
+    self._field = self.field_class(label=self.label, **field_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django_filters\fields.py", line 293, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django_filters\fields.py", line 268, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\forms\fields.py", line 887, in __init__
+    super().__init__(**kwargs)
+TypeError: Field.__init__() got an unexpected keyword argument 'default'
+2025-01-11 21:38:56,406 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 21:41:28,027 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 21:42:47,108 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.
+2025-01-11 21:42:50,107 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.
+2025-01-11 21:44:12,478 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.
+2025-01-11 21:45:57,925 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.
+2025-01-11 21:46:12,081 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 21:50:47,233 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 21:58:24,397 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.
+2025-01-11 22:02:26,044 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\generics.py", line 175, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\pagination.py", line 211, in paginate_queryset
+    self.page = paginator.page(page_number)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\paginator.py", line 89, in page
+    number = self.validate_number(number)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\paginator.py", line 70, in validate_number
+    if number > self.num_pages:
+                ^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\paginator.py", line 116, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+       ^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+           ^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1561, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 2100, in as_sql
+    ).as_sql(with_col_aliases=True)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 883, in as_sql
+    raise NotImplementedError(
+NotImplementedError: annotate() + distinct(fields) is not implemented.
+2025-01-11 22:03:45,928 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.

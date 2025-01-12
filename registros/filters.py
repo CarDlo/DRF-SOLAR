@@ -9,16 +9,24 @@ class RegistroFilter(django_filters.FilterSet):
     endDate = django_filters.DateTimeFilter(field_name='created_at', lookup_expr='lte', help_text="Formato: AAAA-MM-DD")
     REG_CA = django_filters.NumberFilter(field_name='REG_CA', help_text="Código de Registro MODBUS o Dirección Común IEC104")
     direccion = django_filters.NumberFilter(field_name='direccion', help_text="Dirección IOA de IEC104 o no aplica para MODBUS")
-    promedio_diario = django_filters.BooleanFilter(default=False, method='filtrar_promedio_diario', help_text="True para calcular el promedio diario")
+    promedio_diario = django_filters.CharFilter(field_name='promedio_diario', method='filtrar_promedio_diario', help_text="True para calcular el promedio diario")
     muestreo = django_filters.NumberFilter(method='filtrar_muestreo', help_text="Especifica el intervalo de muestreo (e.g., 100 para 1 de cada 100 registros)")
     plant_id = django_filters.NumberFilter(field_name='plant_id', help_text="ID de la planta")
-    
+
     def filtrar_promedio_diario(self, queryset, name, value):
-        if value:
-            # Agrupación por día usando TruncDate y calculando promedio diario
-            return queryset.exclude(value__isnull=True).annotate(
+        if value and value.lower() == 'true':  # Asegúrate de que el valor sea 'true'
+            # Aplicar el filtro REG_CA si está presente
+            if 'REG_CA' in self.data:
+                queryset = queryset.filter(REG_CA=self.data['REG_CA'])
+            
+            # Excluir registros con valor nulo y agrupar por día
+            queryset = queryset.exclude(value__isnull=True).annotate(
                 fecha_dia=TruncDate('created_at')
-            ).values('fecha_dia').annotate(promedio_valor=Avg('value'))
+            ).values('fecha_dia').annotate(
+                promedio_valor=Avg('value')
+            ).order_by('fecha_dia')
+            
+            return queryset
         return queryset
 
 
@@ -30,6 +38,7 @@ class RegistroFilter(django_filters.FilterSet):
         return queryset
 
     class Meta:
+        abstract = True
         fields = ['startDate', 'endDate', 'REG_CA', 'direccion', 'promedio_diario', 'muestreo', 'plant_id']
 
 

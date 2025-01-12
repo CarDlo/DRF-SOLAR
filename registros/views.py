@@ -40,7 +40,7 @@ from registros.services.client_manager_paraprueba import (
     restart_all_clients
 )
 
-#@extend_schema(tags=["Modelo Bayunca"])
+@extend_schema(tags=["Modelo Bayunca"])
 class BayuncaViewSet(viewsets.ModelViewSet):
     queryset = Bayunca.objects.all().order_by('id')
     serializer_class = BayuncaSerializer
@@ -53,13 +53,14 @@ class BayuncaViewSet(viewsets.ModelViewSet):
             return BayuncaPromedioSerializer
         return BayuncaSerializer
 
-#@extend_schema(tags=["Modelo La villa"])
+@extend_schema(tags=["Modelo La villa"])
 class LaVillaViewSet(viewsets.ModelViewSet):
     queryset = LaVilla.objects.all().order_by('id')
     serializer_class = LaVillaSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = LaVillaFilter
     ordering_fields = '__all__'
+
     #ordering = ['created_at']  # Orden predeterminado
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
@@ -67,7 +68,7 @@ class LaVillaViewSet(viewsets.ModelViewSet):
         return LaVillaSerializer
     
     
-#@extend_schema(tags=["Modelo Oldt"])
+@extend_schema(tags=["Modelo Oldt"])
 class OldtViewSet(viewsets.ModelViewSet):
     queryset = Oldt.objects.all().order_by('id')
     serializer_class = OldtSerializer
@@ -80,7 +81,7 @@ class OldtViewSet(viewsets.ModelViewSet):
             return OldtPromedioSerializer
         return OldtSerializer
 
-#@extend_schema(tags=["Modelo Solchacras"])
+@extend_schema(tags=["Modelo Solchacras"])
 class SolchacrasViewSet(viewsets.ModelViewSet):
     queryset = Solchacras.objects.all().order_by('id')
     serializer_class = SolchacrasSerializer
@@ -93,7 +94,7 @@ class SolchacrasViewSet(viewsets.ModelViewSet):
             return SolchacrasPromedioSerializer
         return SolchacrasSerializer
 
-#@extend_schema(tags=["Modelo Solsantonio"])
+@extend_schema(tags=["Modelo Solsantonio"])
 class SolsantonioViewSet(viewsets.ModelViewSet):
     queryset = Solsantonio.objects.all().order_by('id')
     serializer_class = SolsantonioSerializer
@@ -106,7 +107,7 @@ class SolsantonioViewSet(viewsets.ModelViewSet):
             return SolsantonioPromedioSerializer
         return SolsantonioSerializer
 
-#@extend_schema(tags=["Modelo Solhuaqui"])
+@extend_schema(tags=["Modelo Solhuaqui"])
 class SolhuaquiViewSet(viewsets.ModelViewSet):
     queryset = Solhuaqui.objects.all().order_by('id')
     serializer_class = SolhuaquiSerializer
@@ -119,7 +120,7 @@ class SolhuaquiViewSet(viewsets.ModelViewSet):
             return SolhuaquiPromedioSerializer
         return SolhuaquiSerializer
 
-#@extend_schema(tags=["Modelo Sanpedro"])
+@extend_schema(tags=["Modelo Sanpedro"])
 class SanpedroViewSet(viewsets.ModelViewSet):
     queryset = Sanpedro.objects.all().order_by('id')
     serializer_class = SanpedroSerializer
@@ -132,7 +133,7 @@ class SanpedroViewSet(viewsets.ModelViewSet):
             return SanpedroPromedioSerializer
         return SanpedroSerializer
 
-#@extend_schema(tags=["Modelo Gonzaenergy"])
+@extend_schema(tags=["Modelo Gonzaenergy"])
 class GonzaenergyViewSet(viewsets.ModelViewSet):
     queryset = Gonzaenergy.objects.all().order_by('id')
     serializer_class = GonzaenergySerializer
@@ -145,7 +146,7 @@ class GonzaenergyViewSet(viewsets.ModelViewSet):
             return GonzaenergyPromedioSerializer
         return GonzaenergySerializer
 
-#@extend_schema(tags=["Modelo Produlesti"])
+@extend_schema(tags=["Modelo Produlesti"])
 class ProdulestiViewSet(viewsets.ModelViewSet):
     queryset = Produlesti.objects.all().order_by('id')
     serializer_class = ProdulestiSerializer
@@ -158,7 +159,7 @@ class ProdulestiViewSet(viewsets.ModelViewSet):
             return ProdulestiPromedioSerializer
         return ProdulestiSerializer
 
-#@extend_schema(tags=["Modelo General"])
+@extend_schema(tags=["Modelo General"])
 class GeneralViewSet(viewsets.ModelViewSet):
     queryset = General.objects.all().order_by('id')
     serializer_class = GeneralSerializer
@@ -173,10 +174,10 @@ class GeneralViewSet(viewsets.ModelViewSet):
 
 
 #Manejo de rutas para el manejo de los clientes
-# @extend_schema(
-#     tags=["Control del cliente SCADA"],
-#     responses={200: ClientControlSerializer}
-# )
+@extend_schema(
+     tags=["Control del cliente SCADA"],
+     responses={200: ClientControlSerializer}
+ )
 @api_view(['GET'])
 def start_client_api(request, plant_name):
     """
@@ -186,10 +187,10 @@ def start_client_api(request, plant_name):
     return Response({"message": result, "success": True})
 
 
-# @extend_schema(
-#     tags=["Control del cliente SCADA"],
-#     responses={200: ClientControlSerializer}
-# )
+@extend_schema(
+    tags=["Control del cliente SCADA"],
+    responses={200: ClientControlSerializer}
+)
 @api_view(['GET'])
 def stop_client_api(request, plant_name):
     """
@@ -199,10 +200,10 @@ def stop_client_api(request, plant_name):
     return Response({"message": result, "success": True})
 
 
-# @extend_schema(
-#     tags=["Control del cliente SCADA"],
-#     responses={200: ClientControlSerializer}
-# )
+@extend_schema(
+    tags=["Control del cliente SCADA"],
+    responses={200: ClientControlSerializer}
+)
 @api_view(['GET'])
 def restart_client_api(request, plant_name):
     """
@@ -212,10 +213,10 @@ def restart_client_api(request, plant_name):
     return Response({"message": result, "success": True})
 
 
-# @extend_schema(
-#     tags=["Control del cliente SCADA"],
-#     responses={200: ClientControlSerializer}
-# )
+@extend_schema(
+    tags=["Control del cliente SCADA"],
+    responses={200: ClientControlSerializer}
+)
 @api_view(['GET'])
 def get_status_api(request):
     """
@@ -225,10 +226,10 @@ def get_status_api(request):
     return Response({"message": result, "success": True})
 
 
-# @extend_schema(
-#     tags=["Control del cliente SCADA"],
-#     responses={200: ClientControlSerializer}
-# )
+@extend_schema(
+    tags=["Control del cliente SCADA"],
+    responses={200: ClientControlSerializer}
+)
 @api_view(['GET'])
 def start_all_clients_api(request):
     """
@@ -238,10 +239,10 @@ def start_all_clients_api(request):
     return Response({"message": result, "success": True})
 
 
-# @extend_schema(
-#     tags=["Control del cliente SCADA"],
-#     responses={200: ClientControlSerializer}
-# )
+@extend_schema(
+    tags=["Control del cliente SCADA"],
+    responses={200: ClientControlSerializer}
+)
 @api_view(['GET'])
 def stop_all_clients_api(request):
     """
@@ -251,10 +252,10 @@ def stop_all_clients_api(request):
     return Response({"message": result, "success": True})
 
 
-# @extend_schema(
-#     tags=["Control del cliente SCADA"],
-#     responses={200: ClientControlSerializer}
-# )
+@extend_schema(
+    tags=["Control del cliente SCADA"],
+    responses={200: ClientControlSerializer}
+)
 @api_view(['GET'])
 def restart_all_clients_api(request):
     """

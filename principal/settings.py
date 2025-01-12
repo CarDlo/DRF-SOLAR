@@ -63,9 +63,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'rest_framework',
-    #'drf_spectacular',
+    'drf_spectacular',
     'plants',
-    'coreapi',
+    #'coreapi',
     'django_filters',
     'registros',
     'rest_framework_simplejwt',
@@ -179,8 +179,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    #'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
-    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    #"DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
 
     #SIMPLEJWT
     'DEFAULT_PERMISSION_CLASSES': (
@@ -222,10 +222,3 @@ CORS_ALLOWED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.rail
 # Configuración para un panel más avanzado
 # settings.py
 
-# Configurar el host de la API para CoreAPI
-API_SCHEMA = {
-    'TITLE': 'Documentacion API REST',
-    'DESCRIPTION': 'Documentación de la API',
-    'VERSION': '1.0.0',
-    'URL': 'https://web-production-79a9.up.railway.app'  # URL base de tu API
-}
