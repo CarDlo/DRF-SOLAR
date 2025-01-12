@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 import os
 import dj_database_url
 # Load environment variables from .env file
-load_dotenv()
+#load_dotenv()
 
 # Access environment variables
 SECRET_KEY = os.getenv('SECRET_KEY')
