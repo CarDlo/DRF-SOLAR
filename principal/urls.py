@@ -25,7 +25,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, Sp
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('plants.urls')),
-    path('docs/', include_docs_urls(title='Documentacion API', permission_classes=[AllowAny])),
+    path('docs/', include_docs_urls(title='Documentacion API')),
     path('schema/', get_schema_view(title="Esquema CoreAPI")),
     path('api/', include('registros.urls')),
 
