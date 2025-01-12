@@ -20,6 +20,7 @@ load_dotenv()
 
 # Access environment variables
 SECRET_KEY = os.getenv('SECRET_KEY')
+print(SECRET_KEY)
 DEBUG = os.getenv('DEBUG')
 DATABASE_TYPE = os.getenv('DATABASE_TYPE')
 DATABASE_NAME = os.getenv('DATABASE_NAME')
