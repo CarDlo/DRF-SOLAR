@@ -21,10 +21,7 @@ load_dotenv()
 # Access environment variables
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-if not SECRET_KEY:
-    raise ValueError("SECRET_KEY no está definido o es inválido.")
 
-print(SECRET_KEY)
 DEBUG = os.getenv('DEBUG')
 DATABASE_TYPE = os.getenv('DATABASE_TYPE')
 DATABASE_NAME = os.getenv('DATABASE_NAME')
@@ -33,9 +30,13 @@ DATABASE_PASS = os.getenv('DATABASE_PASS')
 DATABASE_HOST = os.getenv('DATABASE_HOST')
 DATABASE_PORT = os.getenv('DATABASE_PORT')
 
-# Database URL
-#DATABASE_URL = os.getenv('DATABASE_URL')
 
+# Database URL
+DATABASE_URL = os.getenv('DATABASE_URL')
+
+# Diagnóstico para ver si Railway está leyendo las variables
+print("CARDLO SECRET_KEY:", os.getenv('SECRET_KEY'))
+print("CARDLO DATABASE_URL:", os.getenv('DATABASE_URL'))
 
 
 
