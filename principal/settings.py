@@ -36,8 +36,8 @@ RAILWAY_PROJECT_NAME = os.getenv('RAILWAY_PROJECT_NAME')
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 # Diagnóstico para ver si Railway está leyendo las variables
-print("CARDLO SECRET_KEY:", os.getenv('SECRET_KEY'))
-print("CARDLO DATABASE_URL:", os.getenv('DATABASE_URL'))
+print("CARDLO SECRET_KEY:", os.getenv('RAILWAY_SECRET_KEY'))
+print("CARDLO DATABASE_URL:", os.getenv('RAILWAY_DATABASE_URL'))
 print("RAILWAY_PROJECT_NAME:", os.getenv('RAILWAY_PROJECT_NAME'))
 
 
