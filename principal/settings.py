@@ -221,3 +221,11 @@ CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.rail
 CORS_ALLOWED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.railway.app']
 # Configuración para un panel más avanzado
 # settings.py
+
+# Configurar el host de la API para CoreAPI
+API_SCHEMA = {
+    'TITLE': 'Documentacion API REST',
+    'DESCRIPTION': 'Documentación de la API',
+    'VERSION': '1.0.0',
+    'URL': 'https://web-production-79a9.up.railway.app'  # URL base de tu API
+}

@@ -3895,3 +3895,4 @@ Traceback (most recent call last):
     raise type(exc)(msg)
 KeyError: "Got KeyError when attempting to get a value for field `promedio_diario` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'promedio_diario'."
 2025-01-11 19:33:47,701 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 21:24:05,014 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.

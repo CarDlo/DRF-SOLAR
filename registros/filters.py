@@ -9,7 +9,7 @@ class RegistroFilter(django_filters.FilterSet):
     endDate = django_filters.DateTimeFilter(field_name='created_at', lookup_expr='lte', help_text="Formato: AAAA-MM-DD")
     REG_CA = django_filters.NumberFilter(field_name='REG_CA', help_text="Código de Registro MODBUS o Dirección Común IEC104")
     direccion = django_filters.NumberFilter(field_name='direccion', help_text="Dirección IOA de IEC104 o no aplica para MODBUS")
-    promedio_diario = django_filters.BooleanFilter(method='filtrar_promedio_diario', help_text="True para calcular el promedio diario")
+    promedio_diario = django_filters.BooleanFilter(default=False, method='filtrar_promedio_diario', help_text="True para calcular el promedio diario")
     muestreo = django_filters.NumberFilter(method='filtrar_muestreo', help_text="Especifica el intervalo de muestreo (e.g., 100 para 1 de cada 100 registros)")
     plant_id = django_filters.NumberFilter(field_name='plant_id', help_text="ID de la planta")
     
