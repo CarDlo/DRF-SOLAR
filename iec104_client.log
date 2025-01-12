@@ -3245,3 +3245,653 @@ AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse`
 2025-01-11 11:48:43,485 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
 2025-01-11 12:00:54,676 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\services\client_manager.py changed, reloading.
 2025-01-11 12:02:15,634 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\clients\modbus_client_rev.py changed, reloading.
+2025-01-11 17:47:54,387 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 102, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'REG_CA'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `REG_CA` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'REG_CA'."
+2025-01-11 17:48:25,702 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\serializers.py changed, reloading.
+2025-01-11 18:34:12,063 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 18:34:32,683 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 102, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'REG_CA'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `REG_CA` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'REG_CA'."
+2025-01-11 18:36:16,553 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 18:36:34,187 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 102, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'REG_CA'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `REG_CA` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'REG_CA'."
+2025-01-11 18:43:03,886 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 18:43:25,360 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 102, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'REG_CA'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `REG_CA` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'REG_CA'."
+2025-01-11 18:45:43,845 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 18:46:02,464 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 102, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'REG_CA'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `REG_CA` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'REG_CA'."
+2025-01-11 18:50:19,156 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 18:50:23,982 - Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\generators.py", line 206, in parse
+    endpoints = self._get_paths_and_endpoints()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\generators.py", line 196, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\generators.py", line 135, in create_view
+    view = super().create_view(callback, method, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\schemas\generators.py", line 191, in create_view
+    view = callback.cls(**getattr(callback, 'initkwargs', {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py", line 66, in __init__
+    print("usando :", self.request.query_params.get('promedio_diario'))
+                      ^^^^^^^^^^^^
+AttributeError: 'LaVillaViewSet' object has no attribute 'request'
+2025-01-11 18:50:24,021 - Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\generators.py", line 206, in parse
+    endpoints = self._get_paths_and_endpoints()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\generators.py", line 196, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\drf_spectacular\generators.py", line 135, in create_view
+    view = super().create_view(callback, method, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\schemas\generators.py", line 191, in create_view
+    view = callback.cls(**getattr(callback, 'initkwargs', {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py", line 66, in __init__
+    print("usando :", self.request.query_params.get('promedio_diario'))
+                      ^^^^^^^^^^^^
+AttributeError: 'LaVillaViewSet' object has no attribute 'request'
+2025-01-11 18:50:47,608 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 18:50:58,617 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 102, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'REG_CA'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `REG_CA` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'REG_CA'."
+2025-01-11 18:53:54,006 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 18:54:18,840 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 102, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'REG_CA'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `REG_CA` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'REG_CA'."
+2025-01-11 18:54:40,383 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 18:55:11,822 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\serializers.py changed, reloading.
+2025-01-11 18:55:45,396 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 102, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'REG_CA'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `REG_CA` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'REG_CA'."
+2025-01-11 18:56:02,339 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\serializers.py changed, reloading.
+2025-01-11 18:58:05,495 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\serializers.py changed, reloading.
+2025-01-11 18:58:09,982 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.
+2025-01-11 19:03:20,244 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\serializers.py changed, reloading.
+2025-01-11 19:04:03,460 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\serializers.py changed, reloading.
+2025-01-11 19:04:06,746 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\filters.py changed, reloading.
+2025-01-11 19:04:09,955 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 19:05:48,234 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 19:06:20,550 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 102, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'REG_CA'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `REG_CA` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'REG_CA'."
+2025-01-11 19:12:04,320 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 19:14:50,694 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.
+2025-01-11 19:20:36,144 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\serializers.py changed, reloading.
+2025-01-11 19:21:01,753 - Internal Server Error: /api/lavilla/
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 102, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'promedio_diario'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\venv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `promedio_diario` on serializer `LaVillaSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'promedio_diario'."
+2025-01-11 19:33:47,701 - C:\Users\charl\OneDrive\Documentos\Proyecto IEC\DRF-Solar\registros\views.py changed, reloading.

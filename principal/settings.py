@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'rest_framework',
-    'drf_spectacular',
+    #'drf_spectacular',
     'plants',
     'coreapi',
     'django_filters',
@@ -177,8 +177,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
-    #"DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+    #'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
 
     #SIMPLEJWT
     'DEFAULT_PERMISSION_CLASSES': (
@@ -218,19 +218,3 @@ CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.rail
 
 # Configuración para un panel más avanzado
 # settings.py
-SPECTACULAR_SETTINGS = {
-    'TITLE': 'API Solar Management',
-    'DESCRIPTION': 'Panel de documentación de la API Solar Management',
-    'VERSION': '1.0.0',
-    'SERVE_INCLUDE_SCHEMA': False,  
-    'SWAGGER_UI_SETTINGS': {
-        'deepLinking': True,
-        'persistAuthorization': True,
-        'displayRequestDuration': True,
-        'defaultModelsExpandDepth': 1,  
-        'defaultModelRendering': 'example',  
-        'filter': True,  
-        'tagsSorter': 'alpha',  
-        'operationsSorter': 'alpha'  
-    }
-}

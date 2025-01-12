@@ -26,9 +26,6 @@ class LaVillaSerializer(RegistroSerializer):
 class LaVillaPromedioSerializer(serializers.Serializer):
     fecha_dia = serializers.DateField()
     promedio_valor = serializers.FloatField()
-    class Meta(RegistroSerializer.Meta):
-        model = LaVilla
-        fields = '__all__'
 
 class OldtSerializer(RegistroSerializer):
     class Meta(RegistroSerializer.Meta):

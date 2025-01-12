@@ -41,6 +41,7 @@ class BayuncaFilter(RegistroFilter):
 class LaVillaFilter(RegistroFilter):
     class Meta(RegistroFilter.Meta):
         model = LaVilla
+        
 
 class OldtFilter(RegistroFilter):
     class Meta(RegistroFilter.Meta):

@@ -35,11 +35,11 @@ urlpatterns = [
     #DRF_SPECTACULAR
 
      # Genera el esquema OpenAPI en formato JSON
-    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    #path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     
     # Interfaz Swagger para visualizar y probar la API
-    path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    #path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
 
     # Interfaz alternativa Redoc (más minimalista)
-    path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    #path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
