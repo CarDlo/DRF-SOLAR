@@ -19,7 +19,7 @@ import dj_database_url
 #load_dotenv()
 
 # Access environment variables
-SECRET_KEY = os.getenv('SECRET_KEY')
+#SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 DEBUG = os.getenv('DEBUG')
@@ -33,11 +33,14 @@ RAILWAY_PROJECT_NAME = os.getenv('RAILWAY_PROJECT_NAME')
 
 
 # Database URL
-DATABASE_URL = os.getenv('DATABASE_URL')
+#DATABASE_URL = os.getenv('DATABASE_URL')
+
+SECRET_KEY = 'django-insecure-ye@4^j!ro*8+*cjf&=9)172w*uak!_$#-_if63pgm^e=w=u%#6'
+DATABASE_URL='postgresql://postgres:csnUArptScAVIsYTPcknoadnxXGThxzv@viaduct.proxy.rlwy.net:51580/railway'
 
 # Diagnóstico para ver si Railway está leyendo las variables
-print("CARDLO SECRET_KEY:", os.getenv('RAILWAY_SECRET_KEY'))
-print("CARDLO DATABASE_URL:", os.getenv('RAILWAY_DATABASE_URL'))
+print("CARDLO SECRET_KEY:", os.getenv('SECRET_KEY'))
+print("CARDLO DATABASE_URL:", os.getenv('DATABASE_URL'))
 print("RAILWAY_PROJECT_NAME:", os.getenv('RAILWAY_PROJECT_NAME'))
 
 
@@ -50,6 +53,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -139,7 +144,7 @@ WSGI_APPLICATION = 'principal.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': dj_database_url.config(default=DATABASE_URL)
 }
 
 
