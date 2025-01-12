@@ -30,7 +30,7 @@ from .serializers import (
     ClientControlSerializer
 )
 from .filters import BayuncaFilter, LaVillaFilter, OldtFilter, SolchacrasFilter, SolsantonioFilter, SolhuaquiFilter, SanpedroFilter, GonzaenergyFilter, ProdulestiFilter, GeneralFilter
-from registros.services.client_manager_paraprueba import (
+from registros.services.client_manager import (
     start_client,
     stop_client,
     restart_client,
