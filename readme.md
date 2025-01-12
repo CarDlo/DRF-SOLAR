@@ -108,7 +108,16 @@ Inicia el servidor de desarrollo de Django para probar la aplicación localmente
 
 El proyecto estará disponible en `http://localhost:8000`.
 
-Para acceder a la documentación de los endpoints, visita: `http://localhost:8000/docs/`
+Para acceder a la documentación de los endpoints, visita: 
+
+Genera el esquema OpenAPI en formato JSON
+`api/schema/`
+    
+Interfaz Swagger para visualizar y probar la API
+`api/docs/`
+
+Interfaz alternativa Redoc (más minimalista)
+`api/redoc/`
 
 
 ## Aplicación Plantas
