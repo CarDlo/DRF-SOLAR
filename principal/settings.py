@@ -202,11 +202,15 @@ REST_FRAMEWORK = {
 
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
-    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=2),
+    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=7),
     'SLIDING_TOKEN_LIFETIME': timedelta(days=30),
-    'SLIDING_TOKEN_REFRESH_LIFETIME_LATE_USER': timedelta(days=1),
-    'SLIDING_TOKEN_LIFETIME_LATE_USER': timedelta(days=30),
+    #'SLIDING_TOKEN_REFRESH_LIFETIME_LATE_USER': timedelta(days=1),
+    #'SLIDING_TOKEN_LIFETIME_LATE_USER': timedelta(days=30),
+
+        # Seguridad adicional
+    'ROTATE_REFRESH_TOKENS': True,          # Regenerar el token de refresco al usarlo
+    'BLACKLIST_AFTER_ROTATION': True,       # Invalidar el token anterior tras renovar
 }
 
 STORAGES = {
