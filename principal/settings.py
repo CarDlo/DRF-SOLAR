@@ -36,7 +36,7 @@ RAILWAY_PROJECT_NAME = os.getenv('RAILWAY_PROJECT_NAME')
 DATABASE_URL = os.getenv('DATABASE_URL')
 #SECRECT_KEY = os.environ.get('SECRET_KEY')
 SECRET_KEY = 'django-insecure-ye@4^j!ro*8+*cjf&=9)172w*uak!_$#-_if63pgm^e=w=u%#6'
-#DATABASE_URL='postgresql://postgres:csnUArptScAVIsYTPcknoadnxXGThxzv@viaduct.proxy.rlwy.net:51580/railway'
+
 
 
 # Diagnóstico para ver si Railway está leyendo las variables
