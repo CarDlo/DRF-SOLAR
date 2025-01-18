@@ -29,7 +29,7 @@ import dj_database_url
 #DATABASE_PASS = os.getenv('DATABASE_PASS')
 #DATABASE_HOST = os.getenv('DATABASE_HOST')
 #DATABASE_PORT = os.getenv('DATABASE_PORT')
-RAILWAY_PROJECT_NAME = os.environ('RAILWAY_PROJECT_NAME')
+RAILWAY_PROJECT_NAME = os.environ.get('RAILWAY_PROJECT_NAME')
 
 
 # Database URL
