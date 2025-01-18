@@ -29,20 +29,20 @@ DATABASE_USER = os.getenv('DATABASE_USER')
 DATABASE_PASS = os.getenv('DATABASE_PASS')
 DATABASE_HOST = os.getenv('DATABASE_HOST')
 DATABASE_PORT = os.getenv('DATABASE_PORT')
-RAILWAY_PROJECT_NAME = os.getenv('RAILWAY_PROJECT_NAME')
+RAILWAY_PROJECT_NAME = os.environ.setdefault('RAILWAY_PROJECT_NAME')
 
 
 # Database URL
-DATABASE_URL = os.getenv('DATABASE_URL')
-#SECRECT_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = 'django-insecure-ye@4^j!ro*8+*cjf&=9)172w*uak!_$#-_if63pgm^e=w=u%#6'
+DATABASE_URL = os.environ.setdefault('DATABASE_URL')
+SECRECT_KEY = os.environ.setdefault('SECRET_KEY')
+#SECRET_KEY = 'django-insecure-ye@4^j!ro*8+*cjf&=9)172w*uak!_$#-_if63pgm^e=w=u%#6'
 
 
 
 # Diagnóstico para ver si Railway está leyendo las variables
-print("CARDLO SECRET_KEY:", os.environ.get('SECRET_KEY'))
-print("CARDLO DATABASE_URL:", os.getenv('DATABASE_URL'))
-print("RAILWAY_PROJECT_NAME:", os.getenv('RAILWAY_PROJECT_NAME'))
+print("CARDLO SECRET_KEY:", os.environ.setdefault('SECRET_KEY'))
+print("CARDLO DATABASE_URL:", os.environ.setdefault('DATABASE_URL'))
+print("RAILWAY_PROJECT_NAME:", os.environ.setdefault('RAILWAY_PROJECT_NAME'))
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -61,7 +61,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','web-production-79a9.up.railway.app','164.92.71.165']
+ALLOWED_HOSTS = ['localhost','web-production-79a9.up.railway.app','164.92.71.165', 'web-tester.up.railway.app']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -233,9 +233,9 @@ STORAGES = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.railway.app', 'https://web-tester.up.railway.app']
 
-CORS_ALLOWED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.railway.app']
+CORS_ALLOWED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.railway.app', 'https://web-tester.up.railway.app']
 # Configuración para un panel más avanzado
 # settings.py
 
