@@ -29,20 +29,20 @@ import dj_database_url
 #DATABASE_PASS = os.getenv('DATABASE_PASS')
 #DATABASE_HOST = os.getenv('DATABASE_HOST')
 #DATABASE_PORT = os.getenv('DATABASE_PORT')
-RAILWAY_PROJECT_NAME = os.environ('RAILWAY_PROJECT_NAME')
+RAILWAY_PROJECT_NAME = os.environ['RAILWAY_PROJECT_NAME']
 
 
 # Database URL
-DATABASE_URL = os.environ('DATABASE_URL')
-SECRECT_KEY = os.environ('SECRET_KEY')
+DATABASE_URL = os.environ['DATABASE_URL']
+SECRECT_KEY = os.environ['SECRET_KEY']
 #SECRET_KEY = 'django-insecure-ye@4^j!ro*8+*cjf&=9)172w*uak!_$#-_if63pgm^e=w=u%#6'
 
 
 
 # Diagnóstico para ver si Railway está leyendo las variables
-print("CARDLO SECRET_KEY:", os.environ('SECRET_KEY'))
-print("CARDLO DATABASE_URL:", os.environ('DATABASE_URL'))
-print("RAILWAY_PROJECT_NAME:", os.environ('RAILWAY_PROJECT_NAME'))
+print("CARDLO SECRET_KEY:", os.environ['SECRET_KEY'])
+print("CARDLO DATABASE_URL:", os.environ['DATABASE_URL'])
+print("RAILWAY_PROJECT_NAME:", os.environ['RAILWAY_PROJECT_NAME'])
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
