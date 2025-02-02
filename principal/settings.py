@@ -61,7 +61,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = True
+ALLOWED_HOSTS = ['*']
 #['localhost:3000','web-production-79a9.up.railway.app','164.92.71.165', 'web-tester.up.railway.app']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -237,7 +237,8 @@ STORAGES = {
 CSRF_TRUSTED_ORIGINS = True
 #['http://localhost:3000', 'https://web-production-79a9.up.railway.app', 'https://web-tester.up.railway.app']
 
-CORS_ALLOWED_ORIGINS = True
+CORS_ALLOWED_ORIGINS = []
+CORS_ORIGIN_ALLOW_ALL = True
 #['http://localhost:3000', 'https://web-production-79a9.up.railway.app', 'https://web-tester.up.railway.app']
 # Configuración para un panel más avanzado
 # settings.py
