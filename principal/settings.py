@@ -233,9 +233,9 @@ STORAGES = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.railway.app', 'https://web-tester.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'https://web-production-79a9.up.railway.app', 'https://web-tester.up.railway.app']
 
-CORS_ALLOWED_ORIGINS = ['http://localhost', 'https://web-production-79a9.up.railway.app', 'https://web-tester.up.railway.app']
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'https://web-production-79a9.up.railway.app', 'https://web-tester.up.railway.app']
 # Configuración para un panel más avanzado
 # settings.py
 
