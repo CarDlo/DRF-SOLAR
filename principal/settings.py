@@ -61,7 +61,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','web-production-79a9.up.railway.app','164.92.71.165', 'web-tester.up.railway.app']
+ALLOWED_HOSTS = ['localhost:3000','web-production-79a9.up.railway.app','164.92.71.165', 'web-tester.up.railway.app']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
