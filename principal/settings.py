@@ -211,7 +211,7 @@ REST_FRAMEWORK = {
     #'ORDERING_PARAM': 'ordering',
 
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 2000,  # Número de registros por página
+    'PAGE_SIZE': 100,  # Número de registros por página
 }
 
 
@@ -234,11 +234,11 @@ STORAGES = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = []
 #['http://localhost:3000', 'https://web-production-79a9.up.railway.app', 'https://web-tester.up.railway.app']
 
 CORS_ALLOWED_ORIGINS = []
-CORS_ORIGIN_ALLOW_ALL = True
+#CORS_ORIGIN_ALLOW_ALL = []
 #['http://localhost:3000', 'https://web-production-79a9.up.railway.app', 'https://web-tester.up.railway.app']
 # Configuración para un panel más avanzado
 # settings.py

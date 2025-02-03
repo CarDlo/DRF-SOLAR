@@ -12,7 +12,7 @@ class RegistroFilter(django_filters.FilterSet):
     promedio_diario = django_filters.CharFilter(field_name='promedio_diario', method='filtrar_promedio_diario', help_text="True para calcular el promedio diario")
     muestreo = django_filters.NumberFilter(method='filtrar_muestreo', help_text="Especifica el intervalo de muestreo (e.g., 100 para 1 de cada 100 registros)")
     plant_id = django_filters.NumberFilter(field_name='plant_id', help_text="ID de la planta")
-    limit = django_filters.NumberFilter(method='filtrar_cantidad', help_text="Número máximo de registros a devolver")
+   # limit = django_filters.NumberFilter(method='filtrar_cantidad', help_text="Número máximo de registros a devolver")
 
     def filtrar_promedio_diario(self, queryset, name, value):
         if value and value.lower() == 'true':  # Asegúrate de que el valor sea 'true'
@@ -38,18 +38,16 @@ class RegistroFilter(django_filters.FilterSet):
             return queryset.annotate(mod_result=F('id') % value).filter(mod_result=0)
         return queryset
     
-    def filtrar_cantidad(self, queryset, name, value):
-        """
-        Filtrar el número máximo de registros a devolver.
-        """
-        if value > 0:
-            return queryset[:value]
-        return queryset
+    # def filtrar_cantidad(self, queryset, name, value):
+    #     if value > 0:
+    #         return queryset[:value]
+    #     return queryset
+
 
 
     class Meta:
         abstract = True
-        fields = ['startDate', 'endDate', 'REG_CA', 'direccion', 'promedio_diario', 'muestreo', 'plant_id', 'limit']
+        fields = ['startDate', 'endDate', 'REG_CA', 'direccion', 'promedio_diario', 'muestreo', 'plant_id']
 
 
 # Subclases para cada modelo

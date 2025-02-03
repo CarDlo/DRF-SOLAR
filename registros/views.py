@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 import asyncio
+from .mixins import LimitPaginationMixin
 from drf_spectacular.utils import extend_schema
 from rest_framework.decorators import api_view
 from rest_framework.filters import OrderingFilter
@@ -41,7 +42,7 @@ from registros.services.client_manager import (
 )
 
 @extend_schema(tags=["Modelo Bayunca"])
-class BayuncaViewSet(viewsets.ModelViewSet):
+class BayuncaViewSet(LimitPaginationMixin, viewsets.ModelViewSet):
     queryset = Bayunca.objects.all().order_by('id')
     serializer_class = BayuncaSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -54,14 +55,16 @@ class BayuncaViewSet(viewsets.ModelViewSet):
         return BayuncaSerializer
 
 @extend_schema(tags=["Modelo La villa"])
-class LaVillaViewSet(viewsets.ModelViewSet):
+class LaVillaViewSet(LimitPaginationMixin, viewsets.ModelViewSet):
     queryset = LaVilla.objects.all().order_by('id')
     serializer_class = LaVillaSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = LaVillaFilter
     ordering_fields = '__all__'
+    #pagination_class = None
+    #ordering = ['-created_at']
 
-    #ordering = ['created_at']  # Orden predeterminado
+
     def get_serializer_class(self):
         if getattr(self, 'request', None) and self.request.query_params.get('promedio_diario') == 'True':
             return LaVillaPromedioSerializer
@@ -69,7 +72,7 @@ class LaVillaViewSet(viewsets.ModelViewSet):
     
     
 @extend_schema(tags=["Modelo Oldt"])
-class OldtViewSet(viewsets.ModelViewSet):
+class OldtViewSet(LimitPaginationMixin, viewsets.ModelViewSet):
     queryset = Oldt.objects.all().order_by('id')
     serializer_class = OldtSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -82,7 +85,7 @@ class OldtViewSet(viewsets.ModelViewSet):
         return OldtSerializer
 
 @extend_schema(tags=["Modelo Solchacras"])
-class SolchacrasViewSet(viewsets.ModelViewSet):
+class SolchacrasViewSet(LimitPaginationMixin, viewsets.ModelViewSet):
     queryset = Solchacras.objects.all().order_by('id')
     serializer_class = SolchacrasSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -95,7 +98,7 @@ class SolchacrasViewSet(viewsets.ModelViewSet):
         return SolchacrasSerializer
 
 @extend_schema(tags=["Modelo Solsantonio"])
-class SolsantonioViewSet(viewsets.ModelViewSet):
+class SolsantonioViewSet(LimitPaginationMixin, viewsets.ModelViewSet):
     queryset = Solsantonio.objects.all().order_by('id')
     serializer_class = SolsantonioSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -108,7 +111,7 @@ class SolsantonioViewSet(viewsets.ModelViewSet):
         return SolsantonioSerializer
 
 @extend_schema(tags=["Modelo Solhuaqui"])
-class SolhuaquiViewSet(viewsets.ModelViewSet):
+class SolhuaquiViewSet(LimitPaginationMixin, viewsets.ModelViewSet):
     queryset = Solhuaqui.objects.all().order_by('id')
     serializer_class = SolhuaquiSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -121,7 +124,7 @@ class SolhuaquiViewSet(viewsets.ModelViewSet):
         return SolhuaquiSerializer
 
 @extend_schema(tags=["Modelo Sanpedro"])
-class SanpedroViewSet(viewsets.ModelViewSet):
+class SanpedroViewSet(LimitPaginationMixin, viewsets.ModelViewSet):
     queryset = Sanpedro.objects.all().order_by('id')
     serializer_class = SanpedroSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -134,7 +137,7 @@ class SanpedroViewSet(viewsets.ModelViewSet):
         return SanpedroSerializer
 
 @extend_schema(tags=["Modelo Gonzaenergy"])
-class GonzaenergyViewSet(viewsets.ModelViewSet):
+class GonzaenergyViewSet(LimitPaginationMixin, viewsets.ModelViewSet):
     queryset = Gonzaenergy.objects.all().order_by('id')
     serializer_class = GonzaenergySerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -147,7 +150,7 @@ class GonzaenergyViewSet(viewsets.ModelViewSet):
         return GonzaenergySerializer
 
 @extend_schema(tags=["Modelo Produlesti"])
-class ProdulestiViewSet(viewsets.ModelViewSet):
+class ProdulestiViewSet(LimitPaginationMixin, viewsets.ModelViewSet):
     queryset = Produlesti.objects.all().order_by('id')
     serializer_class = ProdulestiSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -160,7 +163,7 @@ class ProdulestiViewSet(viewsets.ModelViewSet):
         return ProdulestiSerializer
 
 @extend_schema(tags=["Modelo General"])
-class GeneralViewSet(viewsets.ModelViewSet):
+class GeneralViewSet(LimitPaginationMixin, viewsets.ModelViewSet):
     queryset = General.objects.all().order_by('id')
     serializer_class = GeneralSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
