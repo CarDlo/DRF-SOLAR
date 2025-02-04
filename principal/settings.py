@@ -40,9 +40,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # Diagnóstico para ver si Railway está leyendo las variables
-print("CARDLO SECRET_KEY:", os.environ.get('SECRET_KEY'))
-print("CARDLO DATABASE_URL:", os.environ.get('DATABASE_URL'))
-print("RAILWAY_PROJECT_NAME:", os.environ.get('RAILWAY_PROJECT_NAME'))
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -175,11 +173,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'America/Bogota'
+USE_TZ = True
 USE_I18N = True
 
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)

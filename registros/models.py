@@ -10,7 +10,7 @@ class Bayunca(models.Model):
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="bayunca_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
     created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
-    updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
+    #updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
         verbose_name = "Bayunca 1"
@@ -27,7 +27,7 @@ class LaVilla(models.Model):
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="lavilla_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
     created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
-    updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
+    #updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
         verbose_name = "La Villa"
@@ -45,7 +45,7 @@ class Oldt(models.Model):
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="oldt_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
     created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
-    updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
+    #updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
         verbose_name = "Oldt"
@@ -62,7 +62,7 @@ class Solchacras(models.Model):
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="solchacras_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
     created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
-    updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
+    #updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
         verbose_name = "Solchacras"
@@ -79,7 +79,7 @@ class Solsantonio(models.Model):
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="solsantonio_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
     created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
-    updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
+    #updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
         verbose_name = "Solsantonio"
@@ -96,7 +96,7 @@ class Solhuaqui(models.Model):
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="solhuaqui_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
     created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
-    updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
+    #updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
         verbose_name = "Solhuaqui"
@@ -113,7 +113,7 @@ class Sanpedro(models.Model):
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="sanpedro_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
     created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
-    updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
+    #updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
         verbose_name = "Sanpedro"
@@ -130,7 +130,7 @@ class Gonzaenergy(models.Model):
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="gonzaenergy_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
     created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
-    updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
+    #updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
         verbose_name = "Gonzaenergy"
@@ -146,7 +146,7 @@ class Produlesti(models.Model):
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="produlesti_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
     created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
-    updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
+    #updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
         verbose_name = "Produlesti"
@@ -162,7 +162,7 @@ class General(models.Model):
     metadata = models.JSONField(null=True, blank=True, help_text="Información adicional en formato JSON.")
     plant_id = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name="general_values", null=True, blank=True, help_text="Planta asociada al valor registrado.")
     created_at = models.DateTimeField(db_index=True, auto_now_add=True, help_text="Fecha y hora en que se creó el registro.")
-    updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
+    #updated_at = models.DateTimeField(auto_now=True, help_text="Fecha y hora de la última actualización del registro.")
 
     class Meta:
         verbose_name = "General"
