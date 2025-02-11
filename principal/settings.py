@@ -208,7 +208,7 @@ REST_FRAMEWORK = {
     #'ORDERING_PARAM': 'ordering',
 
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 100,  # Número de registros por página
+    'PAGE_SIZE': 2000,  # Número de registros por página
 }
 
 
