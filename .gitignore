@@ -5,3 +5,8 @@ __pycache__
 iec104_client.log
 procesos.py
 staticfiles
+
+# Ignorar archivos de caché de Python
+__pycache__/
+*.pyc
+*.pyo
