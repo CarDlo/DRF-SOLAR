@@ -44,6 +44,7 @@ def send_data_to_api(value, reg_address, modelo, plant_id):
     """
     Acumula datos y los inserta en la base de datos en lotes para optimizar el rendimiento.
     """
+    print("Enviando datos a la base de datos...")
     try:
         record = None
         match modelo:
@@ -75,7 +76,7 @@ def send_data_to_api(value, reg_address, modelo, plant_id):
             modelo_class = eval(modelo)  # Convertir string a la clase del modelo
             modelo_class.objects.bulk_create(bulk_data[modelo])
             bulk_data[modelo] = []
-            print(f"Se guardaron {len(bulk_data[modelo])} registros en la base de datos.")
+            
 
 
 
