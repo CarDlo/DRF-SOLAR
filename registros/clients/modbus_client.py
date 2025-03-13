@@ -22,6 +22,7 @@ def send_data_to_api(value, reg_address, modelo, plant_id):
     :param modelo: Modelo que se usa para almacenar los registros.
     :param plant_id: ID de la planta.
     """
+    print("Enviando datos a la base de datos desde modbus_client..")
     try:
         # Crear el objeto sin guardarlo en la base de datos
         record = None
