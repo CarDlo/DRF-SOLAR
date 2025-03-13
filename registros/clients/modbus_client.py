@@ -81,7 +81,7 @@ def read_modbus_registers(client, start_address, max_registers, modelo, plant_id
             for i, value in enumerate(result.registers):
                 reg_address = start_address + i
                 send_data_to_api(value, reg_address, modelo, plant_id)
-                #print(f"Dirección: {reg_address}, Valor: {value}")
+                print(f"Dirección: {reg_address}, Valor: {value}")
     except ModbusException as e:
         logging.error(f"Excepción de Modbus: {e}")
     except Exception as e:
