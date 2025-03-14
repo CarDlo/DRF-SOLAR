@@ -155,14 +155,14 @@ def decode_value(data_type, registers):
 
     if data_type == "Single":
         return decode_float32_mid_endian(registers)
-    elif data_type == "Int32":
-        return decode_int32_mid_endian(registers)
-    elif data_type == "UInt32":
-        return decode_uint32_mid_endian(registers)
-    elif data_type == "Int16":
-        return decode_int16(registers[0])
-    elif data_type == "UInt16":
-        return decode_uint16(registers[0])
+    # elif data_type == "Int32":
+    #     return decode_int32_mid_endian(registers)
+    # elif data_type == "UInt32":
+    #     return decode_uint32_mid_endian(registers)
+    # elif data_type == "Int16":
+    #     return decode_int16(registers[0])
+    # elif data_type == "UInt16":
+    #     return decode_uint16(registers[0])
     else:
         # Por defecto, retornar el primer registro sin conversión
         return registers[0]
