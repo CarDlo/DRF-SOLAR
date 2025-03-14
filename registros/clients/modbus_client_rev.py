@@ -203,12 +203,56 @@ def decode_value(data_type, registers):
 #             i += 1
 def process_registers(registers, start_address, modelo, plant_id):
     """
-    Bypass: Procesa los registros leídos sin decodificación ni verificación,
-    enviando cada registro directamente a la API.
+    Procesa los registros leídos, decodifica cada valor según su tipo 
+    y los envía a la API para su almacenamiento.
+    Esta versión incluye logs y manejo de excepciones para aislar posibles errores.
     """
-    for i, value in enumerate(registers):
+    i = 0
+    while i < len(registers):
         reg_address = start_address + i
-        send_data_to_api(value, reg_address, modelo, plant_id)
+        
+        # Intentamos obtener el tipo de dato y loguearlo
+        try:
+            data_type = verification_data(reg_address)
+            logging.info(f"Dirección {reg_address} - Tipo de dato obtenido: {data_type}")
+        except Exception as e:
+            logging.error(f"Error en verification_data para la dirección {reg_address}: {e}")
+            data_type = None
+
+        # Bypass: Si no se obtiene un data_type válido, se envía el valor tal cual
+        if not data_type:
+            logging.info(f"No se obtuvo data_type válido para la dirección {reg_address}. Se envía el valor sin decodificar.")
+            send_data_to_api(registers[i], reg_address, modelo, plant_id)
+            i += 1
+            continue
+
+        try:
+            if data_type in ["Single", "Int32", "UInt32"]:
+                # Verificar que hay suficientes registros para decodificar
+                if i + 1 < len(registers):
+                    reg_pair = registers[i:i+2]
+                    decoded_val = decode_value(data_type, reg_pair)
+                    logging.info(f"Dirección {reg_address} - Valor decodificado ({data_type}): {decoded_val}")
+                    send_data_to_api(decoded_val, reg_address, modelo, plant_id)
+                    i += 2
+                else:
+                    logging.warning(f"No hay suficientes registros para decodificar el valor en la dirección {reg_address}")
+                    i += 1
+            elif data_type in ["Int16", "UInt16"]:
+                decoded_val = decode_value(data_type, [registers[i]])
+                logging.info(f"Dirección {reg_address} - Valor decodificado ({data_type}): {decoded_val}")
+                send_data_to_api(decoded_val, reg_address, modelo, plant_id)
+                i += 1
+            else:
+                # Si el data_type no se reconoce, se envía el valor sin conversión
+                logging.info(f"Dirección {reg_address} - data_type no reconocido ('{data_type}'). Enviando valor sin decodificar: {registers[i]}")
+                send_data_to_api(registers[i], reg_address, modelo, plant_id)
+                i += 1
+        except Exception as e:
+            logging.error(f"Error procesando el registro en la dirección {reg_address}: {e}")
+            # En caso de error, se envía el valor original para continuar el flujo
+            send_data_to_api(registers[i], reg_address, modelo, plant_id)
+            i += 1
 
 # -------------------------------------------------------------------
 # Función de lectura de registros Modbus
