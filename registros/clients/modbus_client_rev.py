@@ -229,7 +229,7 @@ def main_loop(plant_name, ip, port, start_address, max_registers, interval, tota
     """
     Mantiene la conexión al dispositivo Modbus y realiza lecturas periódicas.
     """
-    client = ModbusTcpClient(host=ip, port=port, timeout=0.2)
+    client = ModbusTcpClient(host=ip, port=port, timeout=5)
     try:
         logging.info(f"Conectando a {ip}:{port}...")
         if not client.connect():
