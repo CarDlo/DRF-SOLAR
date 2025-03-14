@@ -55,6 +55,7 @@ def send_data_to_api(value, reg_address, modelo, plant_id):
         if len(bulk_data[modelo]) >= BATCH_SIZE:
             modelo_class = eval(modelo)  # Convertir string a la clase del modelo
             modelo_class.objects.bulk_create(bulk_data[modelo])  # Insertar en batch
+            print("Enviando datos a la base de datos...")
             bulk_data[modelo] = []  # Vaciar la lista después de la inserción
 
     except Exception as e:

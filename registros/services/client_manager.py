@@ -83,6 +83,7 @@ def handle_plant(plant):
         max_registers = metadata.get("max_registers", 10)
         interval = metadata.get("interval", 5)
         block_registers = min(metadata.get("block_registers", 125), 125)
+        print(f"Configuración MODBUS, desde el cliente: {plant_name}, ip={ip}, port={port}, start_address={start_address}, max_registers={max_registers}, interval={interval}")
         start_modbus_client(plant_id, plant_name, ip, port, start_address, block_registers, interval, max_registers, modelo)
 
     elif protocolo == "MODBUS-REV":
@@ -90,6 +91,7 @@ def handle_plant(plant):
         max_registers = metadata.get("max_registers", 10)
         interval = metadata.get("interval", 5)
         block_registers = min(metadata.get("block_registers", 125), 125)
+        print(f"Configuración MODBUS-REV, desde el cliente: {plant_name}, ip={ip}, port={port}, start_address={start_address}, max_registers={max_registers}, interval={interval}")
         start_modbus_client_rev(plant_id, plant_name, ip, port, start_address, block_registers, interval, max_registers, modelo)
     else:
         print(f"Protocolo desconocido para la planta: {plant.name} con protocolo {protocolo}")
