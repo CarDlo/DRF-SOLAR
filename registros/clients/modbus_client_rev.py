@@ -155,14 +155,14 @@ def decode_value(data_type, registers):
 
     if data_type == "Single":
         return decode_float32_mid_endian(registers)
-    # elif data_type == "Int32":
-    #     return decode_int32_mid_endian(registers)
-    # elif data_type == "UInt32":
-    #     return decode_uint32_mid_endian(registers)
-    # elif data_type == "Int16":
-    #     return decode_int16(registers[0])
-    # elif data_type == "UInt16":
-    #     return decode_uint16(registers[0])
+    elif data_type == "Int32":
+        return decode_int32_mid_endian(registers)
+    elif data_type == "UInt32":
+        return decode_uint32_mid_endian(registers)
+    elif data_type == "Int16":
+        return decode_int16(registers[0])
+    elif data_type == "UInt16":
+        return decode_uint16(registers[0])
     else:
         # Por defecto, retornar el primer registro sin conversión
         return registers[0]
@@ -179,7 +179,7 @@ def process_registers(registers, start_address, modelo, plant_id):
     while i < len(registers):
         reg_address = start_address + i
         # Consultar el tipo de dato para la dirección actual
-        data_type = verification_data(reg_address)
+        data_type = verification_data(reg_address) or "Int16"
         
         if data_type in ["Single", "Int32", "UInt32"]:
             # Estos tipos requieren dos registros para su decodificación
