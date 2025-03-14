@@ -150,6 +150,9 @@ def decode_value(data_type, registers):
     :param registers: Lista de registros necesarios para la decodificación.
     :return: Valor decodificado.
     """
+    if not data_type:
+        return registers[0]
+
     if data_type == "Single":
         return decode_float32_mid_endian(registers)
     elif data_type == "Int32":
@@ -167,90 +170,38 @@ def decode_value(data_type, registers):
 # -------------------------------------------------------------------
 # Función para procesar los registros leídos
 # -------------------------------------------------------------------
-# def process_registers(registers, start_address, modelo, plant_id):
-#     """
-#     Procesa los registros leídos, decodifica cada valor según su tipo 
-#     y los envía a la API para su almacenamiento.
-#     """
-#     i = 0
-#     while i < len(registers):
-#         reg_address = start_address + i
-#         # Consultar el tipo de dato para la dirección actual
-#         data_type = verification_data(reg_address)
-        
-#         if data_type in ["Single", "Int32", "UInt32"]:
-#             # Estos tipos requieren dos registros para su decodificación
-#             if i + 1 < len(registers):
-#                 reg_pair = registers[i:i+2]
-#                 decoded_val = decode_value(data_type, reg_pair)
-#                 # Ahora guardamos el valor decodificado en reg_address (NO en reg_address + 1)
-#                 send_data_to_api(decoded_val, reg_address, modelo, plant_id)
-#                 i += 2
-#             else:
-#                 logging.warning(
-#                     f"No hay suficientes registros para decodificar el valor en la dirección {reg_address}"
-#                 )
-#                 i += 1
-#         elif data_type in ["Int16", "UInt16"]:
-#             # Estos tipos se decodifican con un único registro
-#             decoded_val = decode_value(data_type, [registers[i]])
-#             send_data_to_api(decoded_val, reg_address, modelo, plant_id)
-#             i += 1
-#         else:
-#             # Si el registro no está activo o no se ha definido el tipo, 
-#             # se almacena el valor sin conversión
-#             send_data_to_api(registers[i], reg_address, modelo, plant_id)
-#             i += 1
 def process_registers(registers, start_address, modelo, plant_id):
     """
     Procesa los registros leídos, decodifica cada valor según su tipo 
     y los envía a la API para su almacenamiento.
-    Esta versión incluye logs y manejo de excepciones para aislar posibles errores.
     """
     i = 0
     while i < len(registers):
         reg_address = start_address + i
+        # Consultar el tipo de dato para la dirección actual
+        data_type = verification_data(reg_address)
         
-        # Intentamos obtener el tipo de dato y loguearlo
-        try:
-            data_type = verification_data(reg_address)
-            logging.info(f"Dirección {reg_address} - Tipo de dato obtenido: {data_type}")
-        except Exception as e:
-            logging.error(f"Error en verification_data para la dirección {reg_address}: {e}")
-            data_type = None
-
-        # Bypass: Si no se obtiene un data_type válido, se envía el valor tal cual
-        if not data_type:
-            logging.info(f"No se obtuvo data_type válido para la dirección {reg_address}. Se envía el valor sin decodificar.")
-            send_data_to_api(registers[i], reg_address, modelo, plant_id)
-            i += 1
-            continue
-
-        try:
-            if data_type in ["Single", "Int32", "UInt32"]:
-                # Verificar que hay suficientes registros para decodificar
-                if i + 1 < len(registers):
-                    reg_pair = registers[i:i+2]
-                    decoded_val = decode_value(data_type, reg_pair)
-                    logging.info(f"Dirección {reg_address} - Valor decodificado ({data_type}): {decoded_val}")
-                    send_data_to_api(decoded_val, reg_address, modelo, plant_id)
-                    i += 2
-                else:
-                    logging.warning(f"No hay suficientes registros para decodificar el valor en la dirección {reg_address}")
-                    i += 1
-            elif data_type in ["Int16", "UInt16"]:
-                decoded_val = decode_value(data_type, [registers[i]])
-                logging.info(f"Dirección {reg_address} - Valor decodificado ({data_type}): {decoded_val}")
+        if data_type in ["Single", "Int32", "UInt32"]:
+            # Estos tipos requieren dos registros para su decodificación
+            if i + 1 < len(registers):
+                reg_pair = registers[i:i+2]
+                decoded_val = decode_value(data_type, reg_pair)
+                # Ahora guardamos el valor decodificado en reg_address (NO en reg_address + 1)
                 send_data_to_api(decoded_val, reg_address, modelo, plant_id)
-                i += 1
+                i += 2
             else:
-                # Si el data_type no se reconoce, se envía el valor sin conversión
-                logging.info(f"Dirección {reg_address} - data_type no reconocido ('{data_type}'). Enviando valor sin decodificar: {registers[i]}")
-                send_data_to_api(registers[i], reg_address, modelo, plant_id)
+                logging.warning(
+                    f"No hay suficientes registros para decodificar el valor en la dirección {reg_address}"
+                )
                 i += 1
-        except Exception as e:
-            logging.error(f"Error procesando el registro en la dirección {reg_address}: {e}")
-            # En caso de error, se envía el valor original para continuar el flujo
+        elif data_type in ["Int16", "UInt16"]:
+            # Estos tipos se decodifican con un único registro
+            decoded_val = decode_value(data_type, [registers[i]])
+            send_data_to_api(decoded_val, reg_address, modelo, plant_id)
+            i += 1
+        else:
+            # Si el registro no está activo o no se ha definido el tipo, 
+            # se almacena el valor sin conversión
             send_data_to_api(registers[i], reg_address, modelo, plant_id)
             i += 1
 
