@@ -167,40 +167,48 @@ def decode_value(data_type, registers):
 # -------------------------------------------------------------------
 # Función para procesar los registros leídos
 # -------------------------------------------------------------------
+# def process_registers(registers, start_address, modelo, plant_id):
+#     """
+#     Procesa los registros leídos, decodifica cada valor según su tipo 
+#     y los envía a la API para su almacenamiento.
+#     """
+#     i = 0
+#     while i < len(registers):
+#         reg_address = start_address + i
+#         # Consultar el tipo de dato para la dirección actual
+#         data_type = verification_data(reg_address)
+        
+#         if data_type in ["Single", "Int32", "UInt32"]:
+#             # Estos tipos requieren dos registros para su decodificación
+#             if i + 1 < len(registers):
+#                 reg_pair = registers[i:i+2]
+#                 decoded_val = decode_value(data_type, reg_pair)
+#                 # Ahora guardamos el valor decodificado en reg_address (NO en reg_address + 1)
+#                 send_data_to_api(decoded_val, reg_address, modelo, plant_id)
+#                 i += 2
+#             else:
+#                 logging.warning(
+#                     f"No hay suficientes registros para decodificar el valor en la dirección {reg_address}"
+#                 )
+#                 i += 1
+#         elif data_type in ["Int16", "UInt16"]:
+#             # Estos tipos se decodifican con un único registro
+#             decoded_val = decode_value(data_type, [registers[i]])
+#             send_data_to_api(decoded_val, reg_address, modelo, plant_id)
+#             i += 1
+#         else:
+#             # Si el registro no está activo o no se ha definido el tipo, 
+#             # se almacena el valor sin conversión
+#             send_data_to_api(registers[i], reg_address, modelo, plant_id)
+#             i += 1
 def process_registers(registers, start_address, modelo, plant_id):
     """
-    Procesa los registros leídos, decodifica cada valor según su tipo 
-    y los envía a la API para su almacenamiento.
+    Bypass: Procesa los registros leídos sin decodificación ni verificación,
+    enviando cada registro directamente a la API.
     """
-    i = 0
-    while i < len(registers):
+    for i, value in enumerate(registers):
         reg_address = start_address + i
-        # Consultar el tipo de dato para la dirección actual
-        data_type = verification_data(reg_address)
-        
-        if data_type in ["Single", "Int32", "UInt32"]:
-            # Estos tipos requieren dos registros para su decodificación
-            if i + 1 < len(registers):
-                reg_pair = registers[i:i+2]
-                decoded_val = decode_value(data_type, reg_pair)
-                # Ahora guardamos el valor decodificado en reg_address (NO en reg_address + 1)
-                send_data_to_api(decoded_val, reg_address, modelo, plant_id)
-                i += 2
-            else:
-                logging.warning(
-                    f"No hay suficientes registros para decodificar el valor en la dirección {reg_address}"
-                )
-                i += 1
-        elif data_type in ["Int16", "UInt16"]:
-            # Estos tipos se decodifican con un único registro
-            decoded_val = decode_value(data_type, [registers[i]])
-            send_data_to_api(decoded_val, reg_address, modelo, plant_id)
-            i += 1
-        else:
-            # Si el registro no está activo o no se ha definido el tipo, 
-            # se almacena el valor sin conversión
-            send_data_to_api(registers[i], reg_address, modelo, plant_id)
-            i += 1
+        send_data_to_api(value, reg_address, modelo, plant_id)
 
 # -------------------------------------------------------------------
 # Función de lectura de registros Modbus
